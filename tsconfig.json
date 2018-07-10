@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"declaration": false,
+		"declarationMap": false,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"target": "esnext",
+		"jsx": "react",
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitAny": false,
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"inlineSourceMap": false,
+		"lib": [
+			"dom",
+			"esnext"
+		]
+	},
+	"exclude": [
+		"build/**/*"
+	]
+}

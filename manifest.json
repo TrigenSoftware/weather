@@ -1,0 +1,13 @@
+{
+  "name": "My App",
+  "short_name": "My App",
+  "description": "This is my application",
+  "dir": "auto",
+  "lang": "en-US",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/?homescreen=1",
+  "background_color": "#42c88a",
+  "theme_color": "#42c88a"
+}
