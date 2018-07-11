@@ -40,7 +40,7 @@ function base({
 			filename:         '[name].js',
 			chunkFilename:    '[name].js',
 			hashDigestLength: 10,
-			publicPath:       '/'
+			publicPath:       './'
 		},
 		resolve: {
 			extensions: [

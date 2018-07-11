@@ -19,7 +19,7 @@
     "lint:scripts": "tslint -p . -t stylish 'src/**/*.{ts,tsx}'",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "jest": "NODE_ENV=test jest -c jest.config.json",
-    "test": "npm run checkDeps && npm run lint # && npm run jest",
+    "test": "npm run checkDeps && npm run lint && npm run jest",
     "start": "NODE_ENV=development babel-node scripts/webpackDevServer",
     "build": "NODE_ENV=production babel-node scripts/webpackBuild",
     "serve": "NODE_ENV=production babel-node scripts/startServer"
@@ -27,6 +27,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.49",
     "@types/prop-types": "^15.5.3",
+    "@types/qs": "^6.5.1",
     "@types/react": "16.4.6",
     "axios": "^0.18.0",
     "moment": "^2.22.2",
@@ -79,6 +80,7 @@
     "svg-sprite-loader": "^3.2.3",
     "svgo": "^1.0.5",
     "svgo-loader": "^2.1.0",
+    "ts-jest": "^23.0.0",
     "tslint": "^5.10.0",
     "tslint-config-trigen": "^3.0.5",
     "tslint-loader": "^3.6.0",

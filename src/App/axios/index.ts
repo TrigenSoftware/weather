@@ -29,6 +29,3 @@ export function getCancelToken(key: any) {
 
 	return source.token;
 }
-
-// http://api.openweathermap.org/data/2.5/weather?q=novosibirsk
-// http://api.openweathermap.org/data/2.5/forecast?q=novosibirsk&cnt=10
