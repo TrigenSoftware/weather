@@ -1,16 +1,16 @@
 {
-  "name": "trigen-frontend-boilerplate",
-  "version": "0.6.0",
-  "description": "Boilerplate for frontend development.",
+  "name": "weather",
+  "version": "0.0.0",
+  "description": "",
   "author": "dangreen",
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TrigenSoftware/flexis-redux.git"
+    "url": "git+https://github.com/dangreen/weather.git"
   },
   "bugs": {
-    "url": "https://github.com/TrigenSoftware/flexis-redux/issues"
+    "url": "https://github.com/dangreen/weather/issues"
   },
   "scripts": {
     "generateDocs": "typedoc ./src --out ./docs --excludeExternals --mode modules; touch docs/.nojekyll",
@@ -19,7 +19,7 @@
     "lint:scripts": "tslint -p . -t stylish 'src/**/*.{ts,tsx}'",
     "lint": "npm run lint:styles && npm run lint:scripts",
     "jest": "NODE_ENV=test jest -c jest.config.json",
-    "test": "npm run checkDeps && npm run lint && npm run jest",
+    "test": "npm run checkDeps && npm run lint # && npm run jest",
     "start": "NODE_ENV=development babel-node scripts/webpackDevServer",
     "build": "NODE_ENV=production babel-node scripts/webpackBuild",
     "serve": "NODE_ENV=production babel-node scripts/startServer"
