@@ -1,5 +1,6 @@
 
 export default {
-	open:   false,
-	notify: false
+	open:       false,
+	notify:     false,
+	logSnippet: false
 };

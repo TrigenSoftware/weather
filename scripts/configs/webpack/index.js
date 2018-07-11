@@ -1,19 +1,20 @@
+import fs from 'fs';
 import path from 'path';
 import webpack from 'webpack';
+import CleanPlugin from 'clean-webpack-plugin';
 import HtmlPlugin from 'html-webpack-plugin';
-import BabelMinifyPlugin from 'babel-minify-webpack-plugin';
 import update from 'immutability-helper';
 import { decamelize } from 'humps';
-import findIndex from '../../helpers/find-index';
+import findIndex from '../../helpers/findIndex';
 import applyReducers from '../../helpers/applyReducers';
 import addDevScripts from '../../helpers/addDevScripts';
-import babelrc from '../../../.babelrc';
 import htmlminConfig from '../htmlmin';
 import * as stylableLoader from './stylableLoader';
-import * as svgLoader from './svg-loader';
-import * as swLoader from './sw-loader';
+import * as svgLoader from './svgLoader';
+import * as swLoader from './swLoader';
 
 const cwd = process.cwd();
+const babelrc = JSON.parse(fs.readFileSync('.babelrc', 'utf8'));
 const loaders = [
 	stylableLoader,
 	svgLoader,
@@ -29,19 +30,26 @@ const babelOptions = {
 
 function base({
 	envify = {}
-}) {
+} = {}) {
 	return applyReducers(baseLoaders, {
 		entry:   {
-			main: path.join(cwd, 'src/App/index.ts')
+			index: path.join(cwd, 'src/App/index.tsx')
 		},
 		output:  {
-			path:             path.join(cwd, 'build', 'app'),
+			path:             path.join(cwd, 'build'),
 			filename:         '[name].js',
 			chunkFilename:    '[name].js',
 			hashDigestLength: 10,
-			publicPath:       '/app/'
+			publicPath:       '/'
 		},
 		resolve: {
+			extensions: [
+				'.js',
+				'.jsx',
+				'.json',
+				'.ts',
+				'.tsx'
+			],
 			alias: {
 				'~': path.join(cwd, 'src/App')
 			}
@@ -53,14 +61,19 @@ function base({
 					amd: false
 				}
 			}, {
-				test:    /\.js$/,
+				test:    /\.jsx?$/,
 				exclude: /node_modules/,
 				use:     [
 					{
 						loader:  'babel-loader',
 						options: babelOptions
 					},
-					'eslint-loader'
+					{
+						loader:  'eslint-loader',
+						options: {
+							emitError: true
+						}
+					}
 				]
 			}, {
 				test:    /\.tsx?$/,
@@ -73,9 +86,9 @@ function base({
 							useCache:             true,
 							reportFiles:          [
 								'src/**/*.{ts,tsx}',
-								'!src/globals.d.ts'
+								'!globals.d.ts'
 							],
-							useBabel:             true,
+							useBabel:             false,
 							babelCore:            '@babel/core',
 							babelOptions
 						}
@@ -83,7 +96,8 @@ function base({
 					{
 						loader:  'tslint-loader',
 						options: {
-							configFile: './tsconfig.json'
+							emitErrors: true,
+							typeCheck:  true
 						}
 					}
 				]
@@ -114,23 +128,27 @@ export function dev(params) {
 		mode:    { $set: 'development' },
 		module:  {
 			rules: {
-				[findIndex('test', '/\\.js$/', rules)]: {
-					use: { 0: {
-						options: {
-							plugins: { $push: [
-								'react-hot-loader/babel'
-							] }
+				[findIndex('test', '/\\.jsx?$/', rules)]: {
+					use: {
+						0: {
+							options: {
+								plugins: { $push: [
+									'react-hot-loader/babel'
+								] }
+							}
 						}
-					} }
+					}
 				},
 				[findIndex('test', '/\\.tsx?$/', rules)]: {
-					use: { 0: {
-						options: { babelOptions: {
-							plugins: { $push: [
-								'react-hot-loader/babel'
-							] }
-						} }
-					} }
+					use: {
+						0: {
+							options: { babelOptions: {
+								plugins: { $push: [
+									'react-hot-loader/babel'
+								] }
+							} }
+						}
+					}
 				}
 			}
 		},
@@ -140,8 +158,7 @@ export function dev(params) {
 		plugins: { $push: [
 			new webpack.HotModuleReplacementPlugin(),
 			new HtmlPlugin({
-				template: 'src/index.html',
-				inject:   'head'
+				template: 'src/index.html'
 			})
 		] }
 	}));
@@ -150,6 +167,7 @@ export function dev(params) {
 export function build(params) {
 
 	const config = base(params);
+	const { rules } = config.module;
 
 	return applyReducers(buildLoaders, update(config, {
 		output:       {
@@ -157,41 +175,61 @@ export function build(params) {
 			chunkFilename: { $set: '[name].[chunkhash].js' }
 		},
 		mode:         { $set: 'production' },
+		module:  {
+			rules: {
+				[findIndex('test', '/\\.jsx?$/', rules)]: {
+					use: {
+						1: {
+							options: {
+								failOnError: { $set: true }
+							}
+						}
+					}
+				},
+				[findIndex('test', '/\\.tsx?$/', rules)]: {
+					use: {
+						1: {
+							options: {
+								failOnHint: { $set: true }
+							}
+						}
+					}
+				}
+			}
+		},
 		optimization: { $set: {
 			runtimeChunk: 'single',
 			splitChunks:  {
 				name:        true,
 				cacheGroups: {
-					vendor: {
-						priority: -10,
-						test(chunk) {
-
-							// if (module.resource && !/\.js$/.test(module.resource)) {
-							// 	return false;
-							// }
-
-							// return module.context
-							// 	&& module.context.includes('node_modules')
-							// 	&& !module.context.includes('@flexis/ui/components'); // sad hack
-
-							console.log(chunk);
-							return true;
-						}
-					},
 					default: {
-						priority:           -20,
-						minChunks:          2,
-						reuseExistingChunk: true
+						chunks:     'initial',
+						minChunks:  2
+					},
+					vendor: {
+						name:     'vendor',
+						chunks:   'initial',
+						priority: 10,
+						enforce:  true,
+						test(module) {
+
+							if (module.resource && !/\.(j|t)sx?$/.test(module.resource)) {
+								return false;
+							}
+
+							return module.context
+								&& module.context.includes('node_modules')
+								&& !module.context.includes('@flexis/ui/components'); // sad hack
+						}
 					}
 				}
 			}
 		} },
 		plugins:      { $push: [
+			new CleanPlugin('build', { root: cwd }),
 			new webpack.HashedModuleIdsPlugin(),
-			new BabelMinifyPlugin(),
 			new HtmlPlugin({
 				template: 'src/index.html',
-				inject:   'head',
 				minify:   htmlminConfig
 			})
 		] }

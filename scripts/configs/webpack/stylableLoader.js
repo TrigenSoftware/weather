@@ -4,7 +4,17 @@ import stylelint from 'stylelint';
 import postcssReporter from 'postcss-reporter';
 import autoprefixer from 'autoprefixer';
 import update from 'immutability-helper';
-import findIndex from '../../helpers/find-index';
+import findIndex from '../../helpers/findIndex';
+
+const autoprefixProcessor = postcss([
+	autoprefixer()
+]);
+const lintProcessor = postcss([
+	stylelint(),
+	postcssReporter({
+		clearReportedMessages: true
+	})
+]);
 
 export function base(config) {
 	return update(config, {
@@ -22,16 +32,21 @@ export function base(config) {
 
 export function dev(config) {
 
-	const postProcessor = postcss([
-		stylelint(),
-		postcssReporter({ clearReportedMessages: true }),
-		autoprefixer()
-	]);
 	const stylablePlugin = new StylablePlugin({
 		rootScope:      false,
 		transformHooks: {
 			postProcessor(stylableResult) {
-				postProcessor.process(stylableResult.meta.outputAst).sync();
+
+				const { meta } = stylableResult;
+
+				lintProcessor.process(meta.ast, { from: meta.source })
+					.then(() => {})
+					.catch((error) => {
+						console.error(error.message);
+						process.exit(2); // eslint-disable-line
+					});
+				autoprefixProcessor.process(meta.outputAst).sync();
+
 				return stylableResult;
 			}
 		}
@@ -44,14 +59,6 @@ export function dev(config) {
 
 export function build(config) {
 
-	const postProcessor = postcss([
-		stylelint(),
-		postcssReporter({
-			clearReportedMessages: true,
-			throwError:            true
-		}),
-		autoprefixer()
-	]);
 	const stylablePlugin = new StylablePlugin({
 		filename:       '[name].[chunkhash].css',
 		rootScope:      false,
@@ -59,7 +66,17 @@ export function build(config) {
 		includeCSSInJS: false,
 		transformHooks: {
 			postProcessor(stylableResult) {
-				postProcessor.process(stylableResult.meta.outputAst).sync();
+
+				const { meta } = stylableResult;
+
+				lintProcessor.process(meta.ast, { from: meta.source })
+					.then(() => {})
+					.catch((error) => {
+						console.error(error.message);
+						process.exit(2); // eslint-disable-line
+					});
+				autoprefixProcessor.process(meta.outputAst).sync();
+
 				return stylableResult;
 			}
 		},

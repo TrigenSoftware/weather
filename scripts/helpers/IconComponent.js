@@ -96,6 +96,7 @@ function addHrefListener(listener) {
 	);
 }
 
+const hrefListenerTimeout = 1500;
 let prevHref = location.href;
 
 setInterval(() => {
@@ -107,4 +108,4 @@ setInterval(() => {
 		});
 	}
 
-}, 1500);
+}, hrefListenerTimeout);

@@ -1,7 +1,5 @@
 {
 	"compilerOptions": {
-		"declaration": false,
-		"declarationMap": false,
 		"module": "esnext",
 		"moduleResolution": "node",
 		"target": "esnext",
@@ -12,12 +10,13 @@
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
 		"inlineSourceMap": false,
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["src/App/*"]
+		},
 		"lib": [
 			"dom",
 			"esnext"
 		]
-	},
-	"exclude": [
-		"build/**/*"
-	]
+	}
 }
