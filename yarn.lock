@@ -809,9 +809,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@flexis/redux@^0.1.0-alpha":
-  version "0.1.0-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/redux/-/redux-0.1.0-alpha.tgz#12937e3b42d29d528c6ab4a730bcac681c9da536"
+"@flexis/redux@^0.2.0-alpha":
+  version "0.2.0-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/redux/-/redux-0.2.0-alpha.tgz#e8ff4e8e11c4953bd46320ffa41d04e29b333e47"
+  integrity sha512-B9ouXF2j+Wo5tDIq+fqGvrMTARSWWJ15TYdoNUyPrdfcz0GydYmyrTvzFTaPY20qsIhmsxbnz5XxzoTpE4pJpQ==
   dependencies:
     "@babel/runtime" "^7.1.5"
     "@types/node" "^10.12.10"

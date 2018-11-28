@@ -6,7 +6,7 @@
 		"jsx",
 		"json"
 	],
-	"testRegex": "/test/.*\\.spec\\.ts$",
+	"testRegex": "/src/App/.*(\\.|/)spec\\.ts$",
 	"transform": {
 		"^.+\\.tsx?$": "ts-jest"
 	},
@@ -16,6 +16,8 @@
 	"collectCoverage": true,
 	"collectCoverageFrom": [
 		"src/**/*.{ts,tsx}",
+		"!src/**/spec.ts",
+		"!src/**/*.spec.ts",
 		"!**/*.d.ts",
 		"!**/node_modules/**"
 	],

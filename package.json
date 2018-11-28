@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@flexis/redux": "^0.1.0-alpha",
+    "@flexis/redux": "^0.2.0-alpha",
     "@stylable/runtime": "^0.1.8",
     "@types/prop-types": "^15.5.5",
     "@types/qs": "^6.5.1",
