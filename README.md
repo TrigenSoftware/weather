@@ -1,6 +1,8 @@
 
 # Weather
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/TrigenSoftware/weather.svg)](https://greenkeeper.io/)
+
 Architecture demo app.
 
 ## Basic commands
