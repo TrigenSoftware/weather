@@ -5,7 +5,7 @@ import WeatherData from '~/models/WeatherData';
 
 describe('Store', () => {
 
-	describe('Weather', () => {
+	describe('Weather Segment', () => {
 
 		const store = createStore();
 
