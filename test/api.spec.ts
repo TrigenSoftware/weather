@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { getCurrentWeather } from '../src/App/api';
+import { getCurrentWeather } from '../src/App/services/weather';
 
 describe('API', () => {
 

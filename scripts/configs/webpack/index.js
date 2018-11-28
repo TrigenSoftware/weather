@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import webpack from 'webpack';
 import CleanPlugin from 'clean-webpack-plugin';
@@ -14,7 +13,6 @@ import * as svgLoader from './svgLoader';
 import * as swLoader from './swLoader';
 
 const cwd = process.cwd();
-const babelrc = JSON.parse(fs.readFileSync('.babelrc', 'utf8'));
 const loaders = [
 	stylableLoader,
 	svgLoader,
@@ -23,10 +21,6 @@ const loaders = [
 const baseLoaders = loaders.map(_ => _.base);
 const devLoaders = loaders.map(_ => _.dev);
 const buildLoaders = loaders.map(_ => _.build);
-const babelOptions = {
-	...babelrc,
-	babelrc: false
-};
 
 function base({
 	envify = {}
@@ -40,7 +34,7 @@ function base({
 			filename:         '[name].js',
 			chunkFilename:    '[name].js',
 			hashDigestLength: 10,
-			publicPath:       './'
+			publicPath:       '/'
 		},
 		resolve: {
 			extensions: [
@@ -60,13 +54,12 @@ function base({
 				parser: {
 					amd: false
 				}
-			}, {
+			}, /* {
 				test:    /\.jsx?$/,
 				exclude: /node_modules/,
 				use:     [
 					{
-						loader:  'babel-loader',
-						options: babelOptions
+						loader: 'babel-loader'
 					},
 					{
 						loader:  'eslint-loader',
@@ -75,7 +68,7 @@ function base({
 						}
 					}
 				]
-			}, {
+			}, */ {
 				test:    /\.tsx?$/,
 				exclude: /node_modules/,
 				use:     [
@@ -88,9 +81,8 @@ function base({
 								'src/**/*.{ts,tsx}',
 								'!globals.d.ts'
 							],
-							useBabel:             false,
-							babelCore:            '@babel/core',
-							babelOptions
+							useBabel:             true,
+							babelCore:            '@babel/core'
 						}
 					},
 					{
@@ -118,44 +110,18 @@ function base({
 export function dev(params) {
 
 	const config = base(params);
-	const { rules } = config.module;
 	const devScripts = [
 		'webpack-hot-middleware/client?http://localhost:3000/&reload=true'
 	];
 
 	return applyReducers(devLoaders, update(config, {
-		entry:   { $apply: entry => addDevScripts(entry, devScripts) },
-		mode:    { $set: 'development' },
-		module:  {
-			rules: {
-				[findIndex('test', '/\\.jsx?$/', rules)]: {
-					use: {
-						0: {
-							options: {
-								plugins: { $push: [
-									'react-hot-loader/babel'
-								] }
-							}
-						}
-					}
-				},
-				[findIndex('test', '/\\.tsx?$/', rules)]: {
-					use: {
-						0: {
-							options: { babelOptions: {
-								plugins: { $push: [
-									'react-hot-loader/babel'
-								] }
-							} }
-						}
-					}
-				}
-			}
-		},
+		entry:        { $apply: entry => addDevScripts(entry, devScripts) },
+		mode:         { $set: 'development' },
+		devtool:      { $set: 'inline-source-map' },
 		optimization: { $set: {
 			noEmitOnErrors: true
 		} },
-		plugins: { $push: [
+		plugins:      { $push: [
 			new webpack.HotModuleReplacementPlugin(),
 			new HtmlPlugin({
 				template: 'src/index.html'
@@ -177,15 +143,15 @@ export function build(params) {
 		mode:         { $set: 'production' },
 		module:  {
 			rules: {
-				[findIndex('test', '/\\.jsx?$/', rules)]: {
-					use: {
-						1: {
-							options: {
-								failOnError: { $set: true }
-							}
-						}
-					}
-				},
+				// [findIndex('test', '/\\.jsx?$/', rules)]: {
+				// 	use: {
+				// 		1: {
+				// 			options: {
+				// 				failOnError: { $set: true }
+				// 			}
+				// 		}
+				// 	}
+				// },
 				[findIndex('test', '/\\.tsx?$/', rules)]: {
 					use: {
 						1: {

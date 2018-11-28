@@ -1,19 +1,14 @@
 import Axios, { CancelTokenSource } from 'axios';
-import Qs from 'qs';
+import qs from 'qs';
+
+export {
+	Axios as default,
+	qs
+};
 
 const { CancelToken } = Axios;
 
-export default Axios.create({
-	baseURL:          'https://api.openweathermap.org/data/2.5/',
-	responseType:     'json',
-	paramsSerializer: params => Qs.stringify({
-		APPID: process.env.OPENWEATHER_APPID,
-		lang:  'en',
-		units: 'metric',
-		mode:  'json',
-		...params
-	}, { indices: false })
-});
+Axios.defaults.responseType = 'json';
 
 const cancelTokens = new Map<any, CancelTokenSource>();
 

@@ -22,16 +22,3 @@
 .root {
 	font-family: value(fontFamily);
 }
-
-.citySelectContainer {
-	text-align: center;
-}
-
-.citySelect {
-	margin-top: 2em;
-	font-size: 1.2em;
-}
-
-.mainWeather {
-	margin: 2em 0 4em;
-}

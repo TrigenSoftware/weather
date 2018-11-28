@@ -10,6 +10,9 @@
 	"transform": {
 		"^.+\\.tsx?$": "ts-jest"
 	},
+	"moduleNameMapper": {
+		"~(.*)$": "<rootDir>/src/App/$1"
+	},
 	"collectCoverage": true,
 	"collectCoverageFrom": [
 		"src/**/*.{ts,tsx}",
@@ -24,13 +27,11 @@
 		"ts-jest": {
 			"babelConfig": {
 				"presets": [
-					["env", {
-						"targets": { "node": 6 }
-					}],
-					["stage-0"]
-				],
-				"plugins": [
-					"transform-runtime"
+					["babel-preset-trigen", {
+						"targets": { "node": "current" },
+						"commonjs": true,
+						"react": true
+					}]
 				]
 			}
 		}

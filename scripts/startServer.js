@@ -12,7 +12,6 @@ const middleware = [
 ].filter(Boolean);
 const browserSyncConfig = {
 	...browserSyncConfigBase,
-	server: 'build',
 	middleware
 };
 

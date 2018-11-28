@@ -1,121 +1,80 @@
 import React, {
 	PureComponent,
-	ChangeEvent
+	ReactChild
 } from 'react';
 import { hot } from 'react-hot-loader';
 import {
-	IWeatherData,
-	getCurrentWeather,
-	getWeatherForecast
-} from '~/api';
-import Weather from '~/components/Weather';
-import WeatherList from '~/components/WeatherList';
+	BrowserRouter as Router,
+	Route,
+	Link
+} from 'react-router-dom';
+import Weather from '~/containers/Weather/loadable';
 import stylesheet from './App.st.css';
 
-interface IState {
-	city: string;
-	currentWeather: IWeatherData;
-	weatherForecast: IWeatherData[];
+interface IProps {
+	disableRouter?: boolean;
 }
 
-const UPDATE_INTERVAL = 10000;
-const CITIES = [
-	'Novosibirsk',
-	'Novokuznetsk'
-];
-
 @hot(module)
-export default class App extends PureComponent<{}, IState> {
-
-	state = {
-		city:            null,
-		currentWeather:  null,
-		weatherForecast: []
-	};
-
-	constructor(props) {
-		super(props);
-		this.onCityChange = this.onCityChange.bind(this);
-	}
+export default class App extends PureComponent<IProps> {
 
 	render() {
-
-		const {
-			currentWeather,
-			weatherForecast
-		} = this.state;
-
-		if (!currentWeather) {
-			return null;
-		}
-
-		return (
-			<main
-				{...stylesheet('root', {}, this.props)}
-			>
-				{this.citySelect()}
-				<Weather
-					{...stylesheet('mainWeather')}
-					{...currentWeather}
-				/>
-				<WeatherList
-					{...stylesheet('mainList')}
-				>
-					{weatherForecast.map((weatherInfo, i) => (
-						<Weather
-							key={i}
-							{...weatherInfo}
-						/>
-					))}
-				</WeatherList>
-			</main>
-		);
-	}
-
-	citySelect() {
-		return (
+		return this.router(
 			<div
-				{...stylesheet('citySelectContainer')}
+				{...stylesheet('root')}
 			>
-				<select
-					{...stylesheet('citySelect')}
-					defaultValue={CITIES[0]}
-					onChange={this.onCityChange}
-				>
-					{CITIES.map(city => (
-						<option key={city}>{city}</option>
-					))}
-				</select>
+				<ul>
+					<li>
+						<Link to='/'>
+							Home
+						</Link>
+					</li>
+					<li>
+						<Link to='/weather'>
+							Weather
+						</Link>
+					</li>
+					<li>
+						<Link to='/todo'>
+							Todo
+						</Link>
+					</li>
+				</ul>
+				<hr/>
+				<Route
+					path='/'
+					exact
+					component={Home}
+				/>
+				<Route
+					path='/weather'
+					exact
+					component={Weather}
+				/>
 			</div>
 		);
 	}
 
-	componentDidMount() {
+	router(children: ReactChild) {
 
-		this.loadWeatherInfo(CITIES[0]);
+		const {
+			disableRouter = false
+		} = this.props;
 
-		setInterval(() => {
+		if (disableRouter) {
+			return children;
+		}
 
-			const { city } = this.state;
-
-			this.loadWeatherInfo(city);
-
-		}, UPDATE_INTERVAL);
+		return (
+			<Router>
+				{children}
+			</Router>
+		);
 	}
+}
 
-	private onCityChange({ currentTarget: { value } }: ChangeEvent<HTMLSelectElement>) {
-		this.loadWeatherInfo(value);
-	}
-
-	private async loadWeatherInfo(city: string) {
-
-		const weatherForecast = await getWeatherForecast(city);
-		const currentWeather = await getCurrentWeather(city);
-
-		this.setState(() => ({
-			city,
-			currentWeather,
-			weatherForecast
-		}));
-	}
+function Home() {
+	return (
+		<h2>Home</h2>
+	);
 }

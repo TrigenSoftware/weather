@@ -16,8 +16,6 @@ webpackDevCompiler.plugin('done', () => {
 	notify('Recompilation was done.');
 });
 
-// Listen Error
-
 const middleware = [
 	WebpackDevMiddleware(webpackDevCompiler, {
 		publicPath: webpackDevCompiler.options.output.publicPath,
@@ -26,7 +24,8 @@ const middleware = [
 			children: false,
 			modules:  false,
 			colors:   true
-		}
+		},
+		writeToDisk: true
 	}),
 	WebpackHotMiddleware(webpackDevCompiler, {
 		reload: true

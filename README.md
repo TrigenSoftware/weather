@@ -1,6 +1,8 @@
 
 # Weather
 
+Architecture demo app.
+
 ## Basic commands
 
 Start development server: 
@@ -17,9 +19,19 @@ yarn build # or
 npm run build
 ```
 
-Test sources:
+Run tests:
 
 ```bash
 yarn test # or
 npm test
 ```
+
+## Environment variables
+
+To be able to build this app, you should provide some environment variables:
+
+```
+OPENWEATHER_APPID=XXX
+```
+
+You can create `.env` in project root with this variables.
