@@ -8,7 +8,6 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { withOptions } from '@storybook/addon-options';
 import { checkA11y } from '@storybook/addon-a11y';
 import stylesheet from '@flexis/ui/reboot.st.css';
-import pkg from '../../package.json';
 
 addDecorator(story => (
 	<div
@@ -23,14 +22,14 @@ addDecorator(withKnobs);
 addDecorator(checkA11y);
 addDecorator(
 	withOptions({
-		name:              pkg.name.toUpperCase(),
-		url:               pkg.repository.url.replace(/(^git\+)|(\.git$)/g, ''),
+		name:              process.env.PROJECT_NAME,
+		url:               process.env.PROJECT_HOMEPAGE,
 		addonPanelInRight: true
 	})
 );
 
 const stories = require.context(
-	'../../src/',
+	process.env.PROJECT_SRC,
 	true,
 	/\.stories\.tsx$/
 );
