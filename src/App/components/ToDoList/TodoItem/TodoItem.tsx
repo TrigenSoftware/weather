@@ -1,54 +1,91 @@
-import React, { PureComponent } from 'react';
+import React, {
+	PureComponent,
+	FormEvent,
+	ChangeEvent } from 'react';
 import stylesheet from './TodoItem.st.css';
 
-interface INote {
-	name: string;
-}
-
 interface IProps {
-	note: INote;
+	value: string;
+	onSubmit?(value: string);
+	onDelete?();
 }
 
 interface IState {
-	text: string;
-	changed: boolean;
+	value: string;
 }
 
 export default class TodoItem extends PureComponent<IProps, IState> {
-	constructor(props) {
-		super(props);
-		this.state = {
-			text: this.props.note.name,
-			changed: false
+	static getDerivedStateFromProps(
+		{ value }: IProps,
+		{ value: prevValue }: IState
+	): IState {
+		if (prevValue === value) {
+			return null;
+		}
+		return {
+			value
 		};
 	}
 
-	handleChangeText = (event) => {
-		this.setState({
-			text: event.target.value,
-			changed: true
-		});
-	}
+	state = {
+		value: ''
+	};
 
-	onSubmit = () => {
-		// action save
-	}
-
-	onDelete = () => {
-		// action delete
+	constructor(props) {
+		super(props);
+		this.onSubmit = this.onSubmit.bind(this);
+		this.onDelete = this.onDelete.bind(this);
+		this.onChange = this.onChange.bind(this);
 	}
 
 	render() {
-		// @ts-ignore
+		const { value } = this.state;
+		const { value: originalValue } = this.props;
+		const valueWasChanged = value !== originalValue;
+
 		return (
 			<form
 				onSubmit={this.onSubmit}
 				{...stylesheet('root', {}, this.props)}
 			>
-				<input type='text' value={this.state.text} onChange={this.handleChangeText}/>
-				{this.state.changed && <input type='submit' value='Save'/>}
-				<input type='button' value='del' onClick={this.onDelete}/>
+				<input
+					type='text'
+					onChange={this.onChange}
+					value={value}
+				/>
+				{valueWasChanged && (
+					<button>
+						Save
+					</button>
+				)}
+				<button
+					type='button'
+					onClick={this.onDelete}
+				>
+					delete
+				</button>
 			</form>
 		);
+	}
+
+	onSubmit(event: FormEvent) {
+		event.preventDefault();
+		const { onSubmit } = this.props;
+		const { value } = this.state;
+
+		if (typeof onSubmit === 'function') {
+			onSubmit(value);
+		}
+	}
+
+	onDelete() {
+		const { onDelete } = this.props;
+		if (typeof onDelete === 'function') {
+			onDelete();
+		}
+	}
+
+	onChange(event: ChangeEvent<HTMLInputElement>) {
+		this.setState(() => ({ value: event.target.value }));
 	}
 }

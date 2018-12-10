@@ -2,7 +2,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-	object
+	text
 } from '@storybook/addon-knobs/react';
 import {
 	getFakeData
@@ -10,16 +10,14 @@ import {
 import TodoItem from './';
 
 const fakeData = getFakeData();
+const events = {
+	onSubmit: () => {},
+	onDelete: () => {}
+};
 
 const stylableApi = `
 Stylable API
 ---
-- :smSize
-- ::date
-- ::temp
-- ::description
-- ::params
-- ::param
 `;
 
 storiesOf('TodoItem', module)
@@ -28,5 +26,9 @@ storiesOf('TodoItem', module)
 	})
 	.add(
 		'with basic data',
-		() => <TodoItem note={object('note', fakeData)}/>
+		() => (
+			<TodoItem
+				{...events}
+				value={text('Value', fakeData.value)}
+			/>)
 	);
