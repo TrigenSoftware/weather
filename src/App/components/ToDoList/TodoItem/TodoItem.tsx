@@ -1,7 +1,8 @@
 import React, {
-	PureComponent,
 	FormEvent,
-	ChangeEvent } from 'react';
+	ChangeEvent,
+	PureComponent
+} from 'react';
 import stylesheet from './TodoItem.st.css';
 
 interface IProps {
@@ -15,13 +16,16 @@ interface IState {
 }
 
 export default class TodoItem extends PureComponent<IProps, IState> {
+
 	static getDerivedStateFromProps(
 		{ value }: IProps,
 		{ value: prevValue }: IState
 	): IState {
+
 		if (prevValue === value) {
 			return null;
 		}
+
 		return {
 			value
 		};
@@ -32,15 +36,21 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 	};
 
 	constructor(props) {
+
 		super(props);
+
 		this.onSubmit = this.onSubmit.bind(this);
 		this.onDelete = this.onDelete.bind(this);
 		this.onChange = this.onChange.bind(this);
 	}
 
 	render() {
-		const { value } = this.state;
-		const { value: originalValue } = this.props;
+		const {
+			value
+		} = this.state;
+		const {
+			value: originalValue
+		} = this.props;
 		const valueWasChanged = value !== originalValue;
 
 		return (
@@ -70,8 +80,12 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 
 	onSubmit(event: FormEvent) {
 		event.preventDefault();
-		const { onSubmit } = this.props;
-		const { value } = this.state;
+		const {
+			onSubmit
+		} = this.props;
+		const {
+			value
+		} = this.state;
 
 		if (typeof onSubmit === 'function') {
 			onSubmit(value);
@@ -79,13 +93,17 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 	}
 
 	onDelete() {
-		const { onDelete } = this.props;
+		const {
+			onDelete
+		} = this.props;
 		if (typeof onDelete === 'function') {
 			onDelete();
 		}
 	}
 
 	onChange(event: ChangeEvent<HTMLInputElement>) {
-		this.setState(() => ({ value: event.target.value }));
+		this.setState(() => ({
+			value: event.target.value
+		}));
 	}
 }
