@@ -45,6 +45,7 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 	}
 
 	render() {
+
 		const {
 			value
 		} = this.state;
