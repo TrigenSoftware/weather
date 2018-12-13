@@ -79,7 +79,9 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 	}
 
 	onSubmit(event: FormEvent) {
+
 		event.preventDefault();
+
 		const {
 			onSubmit
 		} = this.props;
@@ -93,9 +95,11 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 	}
 
 	onDelete() {
+
 		const {
 			onDelete
 		} = this.props;
+
 		if (typeof onDelete === 'function') {
 			onDelete();
 		}

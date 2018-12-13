@@ -12,11 +12,10 @@ import TodoItem from './';
 
 const fakeData = getFakeData();
 
-// @ts-ignore
-const events = action({
-	onSubmit: 'submit',
-	onDelete: 'delete'
-});
+const events = {
+	onSubmit: action('submit'),
+	onDelete: action('delete')
+};
 
 const stylableApi = `
 Stylable API
