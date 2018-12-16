@@ -5,15 +5,15 @@ import { action } from '@storybook/addon-actions';
 import TodoForm from './';
 
 const events = {
-	onSubmit: action('submit'),
-    };
+	onSubmit: action('submit')
+};
 
 const stylableApi = `
 Stylable API
 ---
 `;
 
-storiesOf('TodoItem', module)
+storiesOf('TodoForm', module)
 	.addParameters({
 		info: stylableApi
 	})

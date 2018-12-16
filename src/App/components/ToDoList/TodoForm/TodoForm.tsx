@@ -14,7 +14,6 @@ interface IProps {
 }
 
 export default class TodoForm extends PureComponent<IProps, IState> {
-	
 
 	state = {
 		value: ''
@@ -22,23 +21,22 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 
 	constructor(props) {
 		super(props);
-		this.onSubmit = this.props.onSubmit.bind(this)
+		this.onSubmit = this.props.onSubmit.bind(this);
 	}
 
 	render() {
-	
 		return (
 			<form
 				{...stylesheet('root', {}, this.props)}
 			>
-				<input 
+				<input
 					type='text'
 					value={this.state.value}
 					onChange={this.onChange}
 				/>
-				<button 
-				type='button'
-				onClick={this.onSubmit}
+				<button
+					type='button'
+					onClick={this.onSubmit}
 				>
 					add
 				</button>
@@ -46,7 +44,7 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 		);
 	}
 
-	onSubmit(event: FormEvent){
+	onSubmit(event: FormEvent) {
 
 		event.preventDefault();
 
@@ -54,7 +52,7 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 			onSubmit
 		} = this.props;
 
-		if (typeof onSubmit === 'function'){
+		if (typeof onSubmit === 'function') {
 			onSubmit();
 		}
 	}
