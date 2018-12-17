@@ -5,12 +5,12 @@ import React, {
  } from 'react';
 import stylesheet from './TodoForm.st.css';
 
-interface IState {
-	value: string;
+interface IProps {
+	onSubmit?(value: string);
 }
 
-interface IProps {
-	onSubmit?();
+interface IState {
+	value: string;
 }
 
 export default class TodoForm extends PureComponent<IProps, IState> {
@@ -20,24 +20,29 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 	};
 
 	constructor(props) {
+
 		super(props);
+
 		this.onSubmit = this.props.onSubmit.bind(this);
 	}
 
 	render() {
+
+		const {
+			value
+		} = this.state;
+
 		return (
 			<form
+				onSubmit={this.onSubmit}
 				{...stylesheet('root', {}, this.props)}
 			>
 				<input
 					type='text'
-					value={this.state.value}
 					onChange={this.onChange}
+					value={value}
 				/>
-				<button
-					type='button'
-					onClick={this.onSubmit}
-				>
+				<button type='submit'>
 					add
 				</button>
 			</form>
@@ -49,11 +54,14 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 		event.preventDefault();
 
 		const {
+			value
+		} = this.state;
+		const {
 			onSubmit
 		} = this.props;
 
 		if (typeof onSubmit === 'function') {
-			onSubmit();
+			onSubmit(value);
 		}
 	}
 
