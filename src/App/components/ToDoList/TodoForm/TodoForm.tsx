@@ -34,15 +34,15 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 
 		return (
 			<form
-				onSubmit={this.onSubmit}
 				{...stylesheet('root', {}, this.props)}
+				onSubmit={this.onSubmit}
 			>
 				<input
 					type='text'
 					onChange={this.onChange}
 					value={value}
 				/>
-				<button type='submit'>
+				<button>
 					add
 				</button>
 			</form>
@@ -54,11 +54,11 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 		event.preventDefault();
 
 		const {
-			value
-		} = this.state;
-		const {
 			onSubmit
 		} = this.props;
+		const {
+			value
+		} = this.state;
 
 		if (typeof onSubmit === 'function') {
 			onSubmit(value);
