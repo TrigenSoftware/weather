@@ -2,10 +2,23 @@ import faker from 'faker';
 
 export function getFakeData() {
 	return {
-		List: [
-			faker.lorem.words(),
-			faker.lorem.words(),
-			faker.lorem.words()
+		items: [
+			{
+				id: faker.random.uuid(),
+				text: faker.random.words()
+			},
+			{
+				id: faker.random.uuid(),
+				text: faker.random.words()
+			},
+			{
+				id: faker.random.uuid(),
+				text: faker.random.words()
+			},
+			{
+				id: faker.random.uuid(),
+				text: faker.random.words()
+			}
 		]
 	};
 }

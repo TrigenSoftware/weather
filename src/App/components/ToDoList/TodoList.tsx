@@ -1,42 +1,78 @@
 import React, {
 	PureComponent
 } from 'react';
+import stylesheet from './TodoList.st.css';
 import TodoForm from './TodoForm';
 import TodoItem from './TodoItem';
-import stylesheet from '~/components/ToDoList/TodoList.st.css';
 
-interface IProps {
-	list: string[];
-	onSubmitItem?(value: string);
-	onDeleteItem?();
-	onSubmitForm?(value: string);
+type ItemId = string;
+
+interface IItem {
+	id: ItemId;
+	text: string;
 }
 
-export default class TodoList extends PureComponent<IProps> {
+interface IProps {
+	items: IItem[];
+	onChange?(id: ItemId, text: string);
+	onDelete?(id: ItemId);
+	onAdd?(id: ItemId, text: string);
+}
+
+interface IState {
+	value: string;
+}
+
+export default class TodoList extends PureComponent<IProps, IState> {
+
+	constructor(props) {
+
+		super(props);
+
+		this.onChange = this.onChange.bind(this);
+		this.onDelete = this.onDelete.bind(this);
+		this.onAdd = this.onAdd.bind(this);
+	}
 
 	render() {
 
 		const {
-			list,
-			onSubmitItem,
-			onDeleteItem,
-			onSubmitForm
+			items
 		} = this.props;
 
 		return (
 			<div
 				{...stylesheet('root', {}, this.props)}
 			>
-				<TodoForm onSubmit={onSubmitForm}/>
-				{list.map((value, i) => (
+				<TodoForm onSubmit={this.onAdd}/>
+				{items.map(({ id, text }) => (
 					<TodoItem
-						key={i}
-						value={value}
-						onSubmit={onSubmitItem}
-						onDelete={onDeleteItem}
+						key={id}
+						value={text}
+						onSubmit={this.onChange(id)}
+						onDelete={this.onDelete(id)}
 					/>
 				))}
 			</div>
 		);
 	}
+
+	onChange(id: ItemId) {
+		return (value: string) => {
+			this.props.onChange(id, value);
+		};
+	}
+
+	onDelete(id: ItemId) {
+		return () => {
+			this.props.onDelete(id) ;
+		};
+	}
+
+	onAdd() {
+		return (value: string) => {
+			this.props.onAdd(String(Date.now()), value);
+		};
+	}
+
 }
