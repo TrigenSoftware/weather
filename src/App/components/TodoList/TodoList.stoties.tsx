@@ -13,9 +13,9 @@ import TodoList from './';
 const fakeData = getFakeData();
 
 const events = {
+	onChange: action('change'),
 	onDelete: action('delete'),
-	onSubmitItem: action('submit'),
-	onSubmitForm: action('submit')
+	onAdd: action('add')
 };
 
 const stylableApi = `
@@ -23,7 +23,7 @@ Stylable API
 ---
 `;
 
-storiesOf('TodoItem', module)
+storiesOf('TodoList', module)
 	.addParameters({
 		info: stylableApi
 	})
@@ -32,7 +32,7 @@ storiesOf('TodoItem', module)
 		() => (
 			<TodoList
 				{...events}
-				list={array('List', fakeData.List)}
+				items={array('items', fakeData.items)}
 			/>
 		)
 	);
