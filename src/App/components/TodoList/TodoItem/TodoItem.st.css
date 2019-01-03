@@ -2,3 +2,11 @@
 	display: flex;
 	justify-content: center;
 }
+
+.root input {
+	width: 80%;
+}
+
+.root button {
+	width: 20%;
+}

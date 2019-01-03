@@ -14,8 +14,11 @@ interface IItem {
 
 interface IProps {
 	items: IItem[];
+
 	onAdd?(id: ItemId, text: string);
+
 	onChange?(id: ItemId, text: string);
+
 	onDelete?(id: ItemId);
 }
 
@@ -46,8 +49,8 @@ export default class TodoList extends PureComponent<IProps, IState> {
 			>
 				<TodoForm onSubmit={this.onAdd}/>
 				{items.map(({
-								id,
-								text
+					id,
+					text
 				}) => (
 					<TodoItem
 						key={id}

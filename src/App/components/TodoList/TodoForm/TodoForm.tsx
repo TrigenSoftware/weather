@@ -38,11 +38,14 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 				onSubmit={this.onSubmit}
 			>
 				<input
+					{...stylesheet('input')}
 					type='text'
 					onChange={this.onChange}
 					value={value}
 				/>
-				<button>
+				<button
+					{...stylesheet('button')}
+				>
 					add
 				</button>
 			</form>

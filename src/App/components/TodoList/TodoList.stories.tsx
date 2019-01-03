@@ -3,19 +3,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import {
-	array
+	button,
+	number
 } from '@storybook/addon-knobs/react';
 import {
 	getFakeData
-} from './TodoList.mock';
+} from './TodoItem/TodoItem.mock';
 import TodoList from './';
 
-const fakeData = getFakeData();
-
 const events = {
+	onAdd: action('add'),
 	onChange: action('change'),
-	onDelete: action('delete'),
-	onAdd: action('add')
+	onDelete: action('delete')
 };
 
 const stylableApi = `
@@ -29,10 +28,27 @@ storiesOf('TodoList', module)
 	})
 	.add(
 		'with basic data',
-		() => (
-			<TodoList
-				{...events}
-				items={array('items', fakeData.items)}
-			/>
-		)
+		() => {
+
+			button('Generate new data', () => {});
+
+			return (
+				<TodoList
+					{...events}
+					items={
+						Array.from({
+							length: number('Items count', 3)
+						}).map(() => {
+
+							const fakeItem = getFakeData();
+
+							return {
+								id: fakeItem.id,
+								text: fakeItem.value
+							};
+						})
+					}
+				/>
+			);
+		}
 	);

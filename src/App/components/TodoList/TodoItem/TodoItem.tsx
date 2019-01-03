@@ -60,12 +60,15 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 				{...stylesheet('root', {}, this.props)}
 			>
 				<input
+					{...stylesheet('input')}
 					type='text'
 					onChange={this.onChange}
 					value={value}
 				/>
 				{valueWasChanged && (
-					<button>
+					<button
+						{...stylesheet('button')}
+					>
 						Save
 					</button>
 				)}
