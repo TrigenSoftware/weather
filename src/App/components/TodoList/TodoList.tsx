@@ -14,11 +14,8 @@ interface IItem {
 
 interface IProps {
 	items: IItem[];
-
 	onAdd?(id: ItemId, text: string);
-
 	onChange?(id: ItemId, text: string);
-
 	onDelete?(id: ItemId);
 }
 

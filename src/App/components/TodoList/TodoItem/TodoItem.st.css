@@ -3,10 +3,10 @@
 	justify-content: center;
 }
 
-.root input {
+.input {
 	width: 80%;
 }
 
-.root button {
+.button {
 	width: 20%;
 }
