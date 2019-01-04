@@ -60,6 +60,22 @@ export default class TodoList extends PureComponent<IProps, IState> {
 		);
 	}
 
+	onAdd() {
+		return (value: string) => {
+
+			const {
+				onAdd
+			} = this.props;
+
+			if (typeof onAdd === 'function') {
+
+				const id = String(Date.now());
+
+				onAdd(id, value);
+			}
+		};
+	}
+
 	onChange(id: ItemId) {
 		return (value: string) => {
 
@@ -85,21 +101,4 @@ export default class TodoList extends PureComponent<IProps, IState> {
 			}
 		};
 	}
-
-	onAdd() {
-		return (value: string) => {
-
-			const {
-				onAdd
-			} = this.props;
-
-			if (typeof onAdd === 'function') {
-
-				const id = String(Date.now());
-
-				onAdd(id, value);
-			}
-		};
-	}
-
 }
