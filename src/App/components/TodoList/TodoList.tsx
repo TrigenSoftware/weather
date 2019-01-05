@@ -69,9 +69,9 @@ export default class TodoList extends PureComponent<IProps, IState> {
 
 			if (typeof onAdd === 'function') {
 
-				const id = String(Date.now());
+				const itemId = String(Date.now());
 
-				onAdd(id, value);
+				onAdd(itemId, value);
 			}
 		};
 	}

@@ -73,6 +73,7 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 					</button>
 				)}
 				<button
+					{...stylesheet('button')}
 					type='button'
 					onClick={this.onDelete}
 				>
