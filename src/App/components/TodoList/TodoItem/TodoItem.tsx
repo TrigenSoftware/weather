@@ -12,6 +12,7 @@ interface IProps {
 }
 
 interface IState {
+	originalValue: string;
 	value: string;
 }
 
@@ -19,25 +20,29 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 
 	static getDerivedStateFromProps(
 		{ value }: IProps,
-		{ value: prevValue }: IState
-	): IState {
+		{ originalValue: prevOriginalValue }: IState
+	) {
 
-		if (prevValue === value) {
-			return null;
+		if (value !== prevOriginalValue) {
+			return {
+				originalValue: value,
+				value
+			};
 		}
 
-		return {
-			value
-		};
+		return null;
 	}
-
-	state = {
-		value: ''
-	};
 
 	constructor(props) {
 
 		super(props);
+
+		const value = this.props.value || '';
+
+		this.state = {
+			originalValue: value,
+			value
+		};
 
 		this.onSubmit = this.onSubmit.bind(this);
 		this.onDelete = this.onDelete.bind(this);
@@ -47,11 +52,9 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 	render() {
 
 		const {
+			originalValue,
 			value
 		} = this.state;
-		const {
-			value: originalValue
-		} = this.props;
 		const valueWasChanged = value !== originalValue;
 
 		return (
@@ -111,8 +114,13 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 	}
 
 	onChange(event: ChangeEvent<HTMLInputElement>) {
+
+		const {
+			value: nextValue
+		} = event.target;
+
 		this.setState(() => ({
-			value: event.target.value
+			value: nextValue
 		}));
 	}
 }

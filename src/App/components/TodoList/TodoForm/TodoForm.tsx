@@ -23,7 +23,8 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 
 		super(props);
 
-		this.onSubmit = this.props.onSubmit.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
+		this.onChange = this.onChange.bind(this);
 	}
 
 	render() {
@@ -66,11 +67,20 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 		if (typeof onSubmit === 'function') {
 			onSubmit(value);
 		}
+
+		this.setState(() => ({
+			value: ''
+		}));
 	}
 
 	onChange(event: ChangeEvent<HTMLInputElement>) {
+
+		const {
+			value: nextValue
+		} = event.target;
+
 		this.setState(() => ({
-			value: event.target.value
+			value: nextValue
 		}));
 	}
 }

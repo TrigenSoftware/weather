@@ -29,9 +29,9 @@ export default class TodoList extends PureComponent<IProps, IState> {
 
 		super(props);
 
+		this.onAdd = this.onAdd.bind(this);
 		this.onChange = this.onChange.bind(this);
 		this.onDelete = this.onDelete.bind(this);
-		this.onAdd = this.onAdd.bind(this);
 	}
 
 	render() {
@@ -44,7 +44,9 @@ export default class TodoList extends PureComponent<IProps, IState> {
 			<div
 				{...stylesheet('root', {}, this.props)}
 			>
-				<TodoForm onSubmit={this.onAdd}/>
+				<TodoForm
+					onSubmit={this.onAdd}
+				/>
 				{items.map(({
 					id,
 					text
@@ -60,20 +62,18 @@ export default class TodoList extends PureComponent<IProps, IState> {
 		);
 	}
 
-	onAdd() {
-		return (value: string) => {
+	onAdd(value: string) {
 
-			const {
-				onAdd
-			} = this.props;
+		const {
+			onAdd
+		} = this.props;
 
-			if (typeof onAdd === 'function') {
+		if (typeof onAdd === 'function') {
 
-				const itemId = String(Date.now());
+			const itemId = String(Date.now());
 
-				onAdd(itemId, value);
-			}
-		};
+			onAdd(itemId, value);
+		}
 	}
 
 	onChange(id: ItemId) {
