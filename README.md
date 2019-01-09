@@ -12,8 +12,8 @@
 [dev-deps]: https://david-dm.org/TrigenSoftware/weather/dev-status.svg
 [dev-deps-url]: https://david-dm.org/TrigenSoftware/weather?type=dev
 
-[build]: http://img.shields.io/travis/TrigenSoftware/weather.svg
-[build-url]: https://travis-ci.org/TrigenSoftware/weather
+[build]: http://img.shields.io/travis/com/TrigenSoftware/weather.svg
+[build-url]: https://travis-ci.com/TrigenSoftware/weather
 
 [greenkeeper]: https://badges.greenkeeper.io/TrigenSoftware/weather.svg
 [greenkeeper-url]: https://greenkeeper.io/
