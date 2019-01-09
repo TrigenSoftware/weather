@@ -1,0 +1,13 @@
+.root {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 15px;
+}
+
+.input {
+	width: 80%;
+}
+
+.button {
+	width: 20%;
+}
