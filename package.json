@@ -85,6 +85,7 @@
     "husky": "^1.0.0-rc.10",
     "immutability-helper": "^2.1.1",
     "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
     "loader-utils": "^1.1.0",
     "node-notifier": "*",
     "postcss": "^7.0.2",
