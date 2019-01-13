@@ -7,8 +7,13 @@ import {
  * Weather state.
  */
 
+interface ITodoItem {
+	id: number;
+	text: string;
+}
+
 export interface ITodoStateProps {
-	todos: List<string>;
+	todos: List<ITodoItem>;
 }
 
 type TodoState = ReturnType<Record.Factory<ITodoStateProps>>;

@@ -8,8 +8,8 @@ export interface ITodoItemDataProps {
 type TodoItemModel = ReturnType<Record.Factory<ITodoItemDataProps>>;
 
 const TodoItemModel = Record<ITodoItemDataProps>({
-	id:          null,
-	text:          null
+	id: null,
+	text: null
 });
 
 export default TodoItemModel;
