@@ -2,18 +2,14 @@ import {
 	Record,
 	List
 } from 'immutable';
+import TodoItem from '~/models/TodoItem';
 
 /**
  * Weather state.
  */
 
-interface ITodoItem {
-	id: number;
-	text: string;
-}
-
 export interface ITodoStateProps {
-	todos: List<ITodoItem>;
+	todos: List<TodoItem>;
 }
 
 type TodoState = ReturnType<Record.Factory<ITodoStateProps>>;
