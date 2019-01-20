@@ -1,8 +1,8 @@
 import { Record } from 'immutable';
 
 export interface ITodoItemProps {
-	id: string;
-	text: number;
+	id: number;
+	text: string;
 }
 
 type TodoItem = ReturnType<Record.Factory<ITodoItemProps>>;

@@ -24,7 +24,7 @@ export { TodoState };
  * AddTodo action.
  */
 
-export type AddTodoPayload = string;
+export type AddTodoPayload = TodoItem;
 
 export interface IAddTodoAction {
 	payload: AddTodoPayload;
