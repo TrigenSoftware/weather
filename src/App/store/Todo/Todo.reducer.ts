@@ -25,11 +25,11 @@ export class TodoReducer extends Reducer {
 		} = payload;
 		const { todos } = state;
 		const index = todos.findIndex(_ => _.id === id);
-		const nexItem = todos.get(index).set('text', text);
+		const nextItem = todos.get(index).set('text', text);
 
 		return state.set(
 			'todos',
-			todos.set(index, nexItem)
+			todos.set(index, nextItem)
 		);
 	}
 

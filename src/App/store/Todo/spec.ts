@@ -12,11 +12,9 @@ describe('Store', () => {
 			return store.loadSegment(TodoSegment, true);
 		});
 
-		it('add todo', () => {
+		it('sould add item', () => {
 
-			expect(store.state.todo.toJS()).toEqual({
-				todos: []
-			});
+			expect(store.state.todo.todos.toJS()).toEqual([]);
 
 			const value = TodoItem({
 				id: 123,
@@ -31,7 +29,7 @@ describe('Store', () => {
 
 		});
 
-		it('edit todo', () => {
+		it('should edit item', () => {
 
 			store.actions.todo.edit({
 				id: 123,
