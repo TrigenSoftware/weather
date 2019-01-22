@@ -12,45 +12,43 @@ describe('Store', () => {
 			return store.loadSegment(TodoSegment, true);
 		});
 
-		it('sould add item', () => {
+		it('should add item', () => {
 
 			expect(store.state.todo.todos.toJS()).toEqual([]);
 
 			const value = TodoItem({
-				id: 123,
+				id: '123',
 				text: 'test text'
 			});
 
 			store.actions.todo.add(value);
 
-			expect(store.state.todo.toJS()).toEqual({
-				todos: [value.toJS()]
-			});
+			expect(store.state.todo.todos.toJS()).toEqual([
+				value.toJS()
+			]);
 
 		});
 
 		it('should edit item', () => {
 
 			store.actions.todo.edit({
-				id: 123,
+				id: '123',
 				text: 'edit text'
 			});
 
-			expect(store.state.todo.toJS()).toEqual({
-				todos: [{
-					id: 123,
+			expect(store.state.todo.todos.toJS()).toEqual([
+				{
+					id: '123',
 					text: 'edit text'
-				}]
-			});
+				}
+			]);
 		});
 
 		it('remove todo', () => {
 
 			store.actions.todo.remove(0);
 
-			expect(store.state.todo.toJS()).toEqual({
-				todos: []
-			});
+			expect(store.state.todo.todos.toJS()).toEqual([]);
 		});
 	});
 });

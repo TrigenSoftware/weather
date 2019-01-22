@@ -1,7 +1,7 @@
 import { Record } from 'immutable';
 
 export interface ITodoItemProps {
-	id: number;
+	id: string;
 	text: string;
 }
 

@@ -35,7 +35,7 @@ export interface IAddTodoAction {
  */
 
 interface IEditTodoPayload {
-	id: number;
+	id: string;
 	text: string;
 }
 
