@@ -44,7 +44,7 @@ describe('Store', () => {
 			]);
 		});
 
-		it('remove todo', () => {
+		it('should remove item', () => {
 
 			store.actions.todo.remove(0);
 
