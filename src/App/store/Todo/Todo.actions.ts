@@ -1,4 +1,7 @@
 import {
+	CrossTabDispatcher
+} from '~/store/loguxDispatchers';
+import {
 	AddTodoPayload,
 	EditTodoPayload,
 	RemoveTodoPayload
@@ -6,7 +9,13 @@ import {
 import { TodoReducer } from './Todo.reducer';
 
 export abstract class TodoActions extends TodoReducer.Actions {
-	abstract add(payload: AddTodoPayload);
-	abstract edit(payload: EditTodoPayload);
-	abstract remove(payload: RemoveTodoPayload);
+
+	@CrossTabDispatcher()
+	add(payload: AddTodoPayload) {}
+
+	@CrossTabDispatcher()
+	edit(payload: EditTodoPayload) {}
+
+	@CrossTabDispatcher()
+	remove(payload: RemoveTodoPayload) {}
 }

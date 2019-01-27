@@ -1,4 +1,7 @@
 import {
+	LocalDispatcher
+} from '~/store/loguxDispatchers';
+import {
 	SetWeatherInfoPayload
 } from './Weather.types';
 import {
@@ -21,5 +24,6 @@ export abstract class WeatherActions extends WeatherReducer.Actions {
 		});
 	}
 
-	abstract setWeatherInfo(payload: SetWeatherInfoPayload);
+	@LocalDispatcher()
+	setWeatherInfo(payload: SetWeatherInfoPayload) {}
 }
