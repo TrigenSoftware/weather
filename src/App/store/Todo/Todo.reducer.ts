@@ -23,10 +23,13 @@ export class TodoReducer extends Reducer {
 			id,
 			text
 		} = payload;
+		const { todos } = state;
+		const index = todos.findIndex(_ => _.id === id);
+		const nextItem = todos.get(index).set('text', text);
 
 		return state.set(
 			'todos',
-			state.todos.set(id, text)
+			todos.set(index, nextItem)
 		);
 	}
 

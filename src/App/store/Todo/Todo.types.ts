@@ -2,13 +2,14 @@ import {
 	Record,
 	List
 } from 'immutable';
+import TodoItem from '~/models/TodoItem';
 
 /**
  * Weather state.
  */
 
 export interface ITodoStateProps {
-	todos: List<string>;
+	todos: List<TodoItem>;
 }
 
 type TodoState = ReturnType<Record.Factory<ITodoStateProps>>;
@@ -23,7 +24,7 @@ export { TodoState };
  * AddTodo action.
  */
 
-export type AddTodoPayload = string;
+export type AddTodoPayload = TodoItem;
 
 export interface IAddTodoAction {
 	payload: AddTodoPayload;
@@ -34,7 +35,7 @@ export interface IAddTodoAction {
  */
 
 interface IEditTodoPayload {
-	id: number;
+	id: string;
 	text: string;
 }
 
