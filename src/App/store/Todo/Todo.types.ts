@@ -5,17 +5,17 @@ import {
 import TodoItem from '~/models/TodoItem';
 
 /**
- * Weather state.
+ * Todo state.
  */
 
 export interface ITodoStateProps {
-	todos: List<TodoItem>;
+	items: List<TodoItem>;
 }
 
 type TodoState = ReturnType<Record.Factory<ITodoStateProps>>;
 
 const TodoState = Record<ITodoStateProps>({
-	todos: List()
+	items: List()
 });
 
 export { TodoState };
@@ -34,12 +34,7 @@ export interface IAddTodoAction {
  * EditTodo action.
  */
 
-interface IEditTodoPayload {
-	id: string;
-	text: string;
-}
-
-export type EditTodoPayload = IEditTodoPayload;
+export type EditTodoPayload = TodoItem;
 
 export interface IEditTodoAction {
 	payload: EditTodoPayload;
@@ -49,7 +44,7 @@ export interface IEditTodoAction {
  * RemoveTodo action.
  */
 
-export type RemoveTodoPayload = number;
+export type RemoveTodoPayload = string;
 
 export interface IRemoveTodoAction {
 	payload: RemoveTodoPayload;

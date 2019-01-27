@@ -9,6 +9,7 @@ import {
 	Link
 } from 'react-router-dom';
 import Weather from '~/containers/Weather/loadable';
+import Todo from '~/containers/Todo';
 import stylesheet from './App.st.css';
 
 interface IProps {
@@ -50,6 +51,11 @@ export default class App extends PureComponent<IProps> {
 					path='/weather'
 					exact
 					component={Weather}
+				/>
+				<Route
+					path='/todo'
+					exact
+					component={Todo}
 				/>
 			</div>
 		);

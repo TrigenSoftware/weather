@@ -14,7 +14,7 @@ describe('Store', () => {
 
 		it('should add item', () => {
 
-			expect(store.state.todo.todos.toJS()).toEqual([]);
+			expect(store.state.todo.items.toJS()).toEqual([]);
 
 			const value = TodoItem({
 				id: '123',
@@ -23,7 +23,7 @@ describe('Store', () => {
 
 			store.actions.todo.add(value);
 
-			expect(store.state.todo.todos.toJS()).toEqual([
+			expect(store.state.todo.items.toJS()).toEqual([
 				value.toJS()
 			]);
 
@@ -31,24 +31,23 @@ describe('Store', () => {
 
 		it('should edit item', () => {
 
-			store.actions.todo.edit({
+			const value = TodoItem({
 				id: '123',
-				text: 'edit text'
+				text: 'test text'
 			});
 
-			expect(store.state.todo.todos.toJS()).toEqual([
-				{
-					id: '123',
-					text: 'edit text'
-				}
+			store.actions.todo.edit(value);
+
+			expect(store.state.todo.items.toJS()).toEqual([
+				value.toJS()
 			]);
 		});
 
 		it('should remove item', () => {
 
-			store.actions.todo.remove(0);
+			store.actions.todo.remove('123');
 
-			expect(store.state.todo.todos.toJS()).toEqual([]);
+			expect(store.state.todo.items.toJS()).toEqual([]);
 		});
 	});
 });

@@ -12,8 +12,8 @@ export class TodoReducer extends Reducer {
 
 	add(state: TodoState, { payload }: IAddTodoAction) {
 		return state.set(
-			'todos',
-			state.todos.push(payload)
+			'items',
+			state.items.push(payload)
 		);
 	}
 
@@ -23,20 +23,25 @@ export class TodoReducer extends Reducer {
 			id,
 			text
 		} = payload;
-		const { todos } = state;
-		const index = todos.findIndex(_ => _.id === id);
-		const nextItem = todos.get(index).set('text', text);
+		const { items } = state;
+		const index = items.findIndex(_ => _.id === id);
+		const nextItem = items.get(index).set('text', text);
 
 		return state.set(
-			'todos',
-			todos.set(index, nextItem)
+			'items',
+			items.set(index, nextItem)
 		);
 	}
 
 	remove(state: TodoState, { payload }: IRemoveTodoAction) {
+
+		const id = payload;
+		const { items } = state;
+		const index = items.findIndex(_ => _.id === id);
+
 		return state.set(
-			'todos',
-			state.todos.remove(payload)
+			'items',
+			items.remove(index)
 		);
 	}
 }
