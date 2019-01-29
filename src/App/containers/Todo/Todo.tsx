@@ -13,12 +13,11 @@ import {
 import { TodoSegment } from '~/store/segments';
 import Loading from '~/components/Loading';
 import TodoList from '~/components/TodoList';
-import TodoItem from '~/models/TodoItem';
 import stylesheet from './Todo.st.css';
 
-interface Iprops extends ITodoStateProps {
+interface IProps extends ITodoStateProps {
 	add(payload: AddTodoPayload);
-	change(payload: EditTodoPayload);
+	edit(payload: EditTodoPayload);
 	remove(payload: RemoveTodoPayload);
 }
 
@@ -30,9 +29,9 @@ function mapStateToProps({ todo }: State): ITodoStateProps {
 
 function mapActionsToProps({ todo }: IActions) {
 	return {
-		add: 	      todo.add,
-		change:   todo.edit,
-		remove: 	todo.remove
+		add: todo.add,
+		edit: todo.edit,
+		remove: todo.remove
 	};
 }
 export default Connect({
@@ -41,7 +40,7 @@ export default Connect({
 	mapStateToProps,
 	mapActionsToProps
 })(
-class TodoContainer extends PureComponent<Iprops> {
+class TodoContainer extends PureComponent<IProps> {
 
 	constructor(props) {
 		super(props);
@@ -69,7 +68,6 @@ class TodoContainer extends PureComponent<Iprops> {
 							onAdd={this.onAdd}
 							onChange={this.onChange}
 							onDelete={this.onDelete}
-							{...stylesheet('mainTodo')}
 					/>
 			</main>
 		);
@@ -80,25 +78,23 @@ class TodoContainer extends PureComponent<Iprops> {
 		const {
 			add
 		} = this.props;
-		const value = TodoItem({
+
+		add({
 			id,
 			text
 		});
-
-		add(value);
 	}
 
 	onChange(id: string, text: string) {
 
 		const {
-			change
+			edit
 		} = this.props;
-		const value = TodoItem({
+
+		edit({
 			id,
 			text
 		});
-
-		change(value);
 	}
 
 	onDelete(id: string) {

@@ -5,6 +5,7 @@ import {
 	IEditTodoAction,
 	IRemoveTodoAction
 } from './Todo.types';
+import TodoItem from '~/models/TodoItem';
 
 export class TodoReducer extends Reducer {
 
@@ -13,7 +14,7 @@ export class TodoReducer extends Reducer {
 	add(state: TodoState, { payload }: IAddTodoAction) {
 		return state.set(
 			'items',
-			state.items.push(payload)
+			state.items.push(TodoItem(payload))
 		);
 	}
 
@@ -26,7 +27,6 @@ export class TodoReducer extends Reducer {
 		const { items } = state;
 		const index = items.findIndex(_ => _.id === id);
 		const nextItem = items.get(index).set('text', text);
-
 		return state.set(
 			'items',
 			items.set(index, nextItem)

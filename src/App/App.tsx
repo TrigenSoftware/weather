@@ -9,7 +9,7 @@ import {
 	Link
 } from 'react-router-dom';
 import Weather from '~/containers/Weather/loadable';
-import Todo from '~/containers/Todo';
+import Todo from '~/containers/Todo/loadable';
 import stylesheet from './App.st.css';
 
 interface IProps {

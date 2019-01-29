@@ -1,6 +1,5 @@
 import createStore from '../';
 import { TodoSegment } from './register';
-import TodoItem from '~/models/TodoItem';
 
 describe('Store', () => {
 
@@ -16,30 +15,32 @@ describe('Store', () => {
 
 			expect(store.state.todo.items.toJS()).toEqual([]);
 
-			const value = TodoItem({
+			store.actions.todo.add({
 				id: '123',
 				text: 'test text'
 			});
 
-			store.actions.todo.add(value);
-
 			expect(store.state.todo.items.toJS()).toEqual([
-				value.toJS()
+				{
+					id: '123',
+					text: 'test text'
+				}
 			]);
 
 		});
 
 		it('should edit item', () => {
 
-			const value = TodoItem({
+			store.actions.todo.edit({
 				id: '123',
-				text: 'test text'
+				text: 'edit text'
 			});
 
-			store.actions.todo.edit(value);
-
 			expect(store.state.todo.items.toJS()).toEqual([
-				value.toJS()
+				{
+					id: '123',
+					text: 'edit text'
+				}
 			]);
 		});
 

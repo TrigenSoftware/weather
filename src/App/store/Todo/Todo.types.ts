@@ -2,7 +2,7 @@ import {
 	Record,
 	List
 } from 'immutable';
-import TodoItem from '~/models/TodoItem';
+import TodoItem, { ITodoItemProps } from '~/models/TodoItem';
 
 /**
  * Todo state.
@@ -24,7 +24,7 @@ export { TodoState };
  * AddTodo action.
  */
 
-export type AddTodoPayload = TodoItem;
+export type AddTodoPayload = ITodoItemProps;
 
 export interface IAddTodoAction {
 	payload: AddTodoPayload;
@@ -34,7 +34,7 @@ export interface IAddTodoAction {
  * EditTodo action.
  */
 
-export type EditTodoPayload = TodoItem;
+export type EditTodoPayload = ITodoItemProps;
 
 export interface IEditTodoAction {
 	payload: EditTodoPayload;
