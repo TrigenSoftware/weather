@@ -73,11 +73,12 @@ class TodoContainer extends PureComponent<IProps> {
 		);
 	}
 
-	onAdd(id: string, text: string) {
+	onAdd(text: string) {
 
 		const {
 			add
 		} = this.props;
+		const id = String(Date.now());
 
 		add({
 			id,

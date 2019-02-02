@@ -2,7 +2,9 @@ import {
 	Record,
 	List
 } from 'immutable';
-import TodoItem, { ITodoItemProps } from '~/models/TodoItem';
+import TodoItem, {
+	ITodoItemProps
+} from '~/models/TodoItem';
 
 /**
  * Todo state.

@@ -12,9 +12,10 @@ export class TodoReducer extends Reducer {
 	static namespace = 'todo';
 
 	add(state: TodoState, { payload }: IAddTodoAction) {
+		const item = TodoItem(payload);
 		return state.set(
 			'items',
-			state.items.push(TodoItem(payload))
+			state.items.push(item)
 		);
 	}
 
@@ -27,6 +28,7 @@ export class TodoReducer extends Reducer {
 		const { items } = state;
 		const index = items.findIndex(_ => _.id === id);
 		const nextItem = items.get(index).set('text', text);
+
 		return state.set(
 			'items',
 			items.set(index, nextItem)
