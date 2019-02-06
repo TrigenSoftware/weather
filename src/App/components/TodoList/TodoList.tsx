@@ -14,7 +14,7 @@ interface IItem {
 
 interface IProps {
 	items: IItem[];
-	onAdd?(id: ItemId, text: string);
+	onAdd?(text: string);
 	onChange?(id: ItemId, text: string);
 	onDelete?(id: ItemId);
 }
@@ -69,10 +69,7 @@ export default class TodoList extends PureComponent<IProps, IState> {
 		} = this.props;
 
 		if (typeof onAdd === 'function') {
-
-			const itemId = String(Date.now());
-
-			onAdd(itemId, value);
+			onAdd(value);
 		}
 	}
 

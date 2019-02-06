@@ -13,7 +13,7 @@ const {
 export default function createStore() {
 
 	const store = new Store<State, IActions>({
-		state: State(),
+		state:    State(),
 		enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 	});
 
