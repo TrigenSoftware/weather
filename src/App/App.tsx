@@ -1,6 +1,6 @@
 import React, {
-	PureComponent,
-	ReactChild
+	ReactChild,
+	PureComponent
 } from 'react';
 import { hot } from 'react-hot-loader';
 import {

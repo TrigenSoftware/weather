@@ -21,7 +21,7 @@ type State = ReturnType<Record.Factory<IStateProps>>;
 
 const State = Record<IStateProps>({
 	weather: WeatherState(),
-	todo: TodoState()
+	todo:    TodoState()
 });
 
 export { State };

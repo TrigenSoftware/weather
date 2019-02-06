@@ -23,27 +23,30 @@ interface IProps extends ITodoStateProps {
 
 function mapStateToProps({ todo }: State): ITodoStateProps {
 	return {
-		items: 	todo.items
+		items: todo.items
 	};
 }
 
 function mapActionsToProps({ todo }: IActions) {
 	return {
-		add: todo.add,
-		edit: todo.edit,
+		add:    todo.add,
+		edit:   todo.edit,
 		remove: todo.remove
 	};
 }
+
 export default Connect({
 	dependsOn: TodoSegment,
-	loading: Loading,
+	loading:   Loading,
 	mapStateToProps,
 	mapActionsToProps
 })(
 class TodoContainer extends PureComponent<IProps> {
 
 	constructor(props) {
+
 		super(props);
+
 		this.onAdd = this.onAdd.bind(this);
 		this.onChange = this.onChange.bind(this);
 		this.onDelete = this.onDelete.bind(this);
@@ -63,12 +66,12 @@ class TodoContainer extends PureComponent<IProps> {
 			<main
 				{...stylesheet('root')}
 			>
-					<TodoList
-							items={items.toJS()}
-							onAdd={this.onAdd}
-							onChange={this.onChange}
-							onDelete={this.onDelete}
-					/>
+				<TodoList
+					items={items.toArray()}
+					onAdd={this.onAdd}
+					onChange={this.onChange}
+					onDelete={this.onDelete}
+				/>
 			</main>
 		);
 	}
