@@ -7,7 +7,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/TrigenSoftware/weather.git"
+    "url": "https://github.com/TrigenSoftware/weather"
   },
   "bugs": {
     "url": "https://github.com/TrigenSoftware/weather/issues"
