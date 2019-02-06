@@ -1339,6 +1339,11 @@
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-0.1.8.tgz#cf48e3db4d862a291bcd4a9839f3fad79da469f3"
 
+"@stylable/runtime@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-1.0.0.tgz#3a09b2590930447e1a143183781c79a387f02804"
+  integrity sha512-gAhkwQVehDveDI7xz1cPiKAP/LNcsZAYiwD5C8uc+l18Xy69Hg0LQhYg93/wi03qs3rLqjdbg+Th2APhhekwUA==
+
 "@stylable/webpack-plugin@^0.1.11":
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/@stylable/webpack-plugin/-/webpack-plugin-0.1.11.tgz#359e390cb330a9316dae0ce3047856da56c9a109"

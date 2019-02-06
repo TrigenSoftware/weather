@@ -29,7 +29,7 @@
     "@babel/runtime": "^7.0.0",
     "@flexis/redux": "^0.2.0-alpha",
     "@flexis/ui": "^0.2.2-alpha",
-    "@stylable/runtime": "^0.1.8",
+    "@stylable/runtime": "^1.0.0",
     "@types/prop-types": "^15.5.5",
     "@types/qs": "^6.5.1",
     "@types/react": "16.7.12",
