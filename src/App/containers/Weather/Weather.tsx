@@ -36,17 +36,20 @@ function mapActionsToProps({ weather }: IActions) {
 	};
 }
 
-// @hot(module)
 export default Connect({
 	dependsOn: WeatherSegment,
-	loading: Loading,
+	loading:   Loading,
 	mapStateToProps,
 	mapActionsToProps
 })(
 class WatherContainer extends PureComponent<IProps> {
 
+	updateIntervalId: any = null;
+
 	constructor(props) {
+
 		super(props);
+
 		this.onCityChange = this.onCityChange.bind(this);
 	}
 
@@ -106,13 +109,17 @@ class WatherContainer extends PureComponent<IProps> {
 
 	componentDidMount() {
 
-		setInterval(() => {
+		this.updateIntervalId = setInterval(() => {
 
 			const { city } = this.props;
 
 			this.props.loadWeatherInfo(city);
 
 		}, UPDATE_INTERVAL);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.updateIntervalId);
 	}
 
 	private onCityChange({ currentTarget: { value } }: ChangeEvent<HTMLSelectElement>) {
