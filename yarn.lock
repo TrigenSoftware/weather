@@ -1315,23 +1315,24 @@
     react-modal "^3.6.1"
     react-treebeard "^3.1.0"
 
-"@stylable/core@^0.1.10":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@stylable/core/-/core-0.1.10.tgz#5bbf9c6017e838a335d781848349f4c649bc7a72"
+"@stylable/core@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@stylable/core/-/core-1.0.0.tgz#d4c0db544b074bfd1a84218848de99f4ee454273"
+  integrity sha512-3FIoBkdIctJWKDF8ZC88+cBlAucT8KMNvCQP35PnLmHzRGOMqTNYlBZkgKLemR83worafWVqy0R95wyiohnU1g==
   dependencies:
     clean-css "^4.2.1"
-    css-selector-tokenizer "^0.7.0"
+    css-selector-tokenizer "^0.7.1"
     deindent "^0.1.0"
     enhanced-resolve "^4.1.0"
     is-vendor-prefixed "^1.0.0"
     lodash.clonedeep "^4.5.0"
     murmurhash "^0.0.2"
-    postcss "^7.0.2"
+    postcss "^7.0.11"
     postcss-js "^2.0.0"
-    postcss-nested "^4.1.0"
+    postcss-nested "^4.1.1"
     postcss-safe-parser "^4.0.1"
-    postcss-selector-matches "^3.0.1"
-    postcss-value-parser "^3.3.0"
+    postcss-selector-matches "^4.0.0"
+    postcss-value-parser "^3.3.1"
     url-regex "^4.1.1"
 
 "@stylable/core@^0.1.19":
@@ -1363,14 +1364,10 @@
     find-config "^1.0.0"
     murmurhash "^0.0.2"
 
-"@stylable/runtime@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-0.1.8.tgz#cf48e3db4d862a291bcd4a9839f3fad79da469f3"
-
-"@stylable/runtime@^0.2.0-alpha.0":
-  version "0.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-0.2.0-alpha.0.tgz#c1e957e9f8b3a5489f3da7179a57692fa67d66d2"
-  integrity sha512-xaIGTsZn3dpSwmY7blNFKWBcfVMU9HVJ/naVQpJOcTYC0vU8uZAMB1RosRzILhaviUQmyB9ndHWGRihVwM8dCQ==
+"@stylable/runtime@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-1.0.0.tgz#3a09b2590930447e1a143183781c79a387f02804"
+  integrity sha512-gAhkwQVehDveDI7xz1cPiKAP/LNcsZAYiwD5C8uc+l18Xy69Hg0LQhYg93/wi03qs3rLqjdbg+Th2APhhekwUA==
 
 "@stylable/webpack-plugin@^0.2.0":
   version "0.2.0"
@@ -1417,9 +1414,10 @@
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.0.tgz#2fac51050c68f7d6f96c5aafc631132522f4aa3f"
 
-"@types/jest@^23.3.1":
-  version "23.3.1"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.1.tgz#a4319aedb071d478e6f407d1c4578ec8156829cf"
+"@types/jest@^24.0.0":
+  version "24.0.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.0.tgz#848492026c327b3548d92be0352a545c36a21e8a"
+  integrity sha512-kOafJnUTnMd7/OfEO/x3I47EHswNjn+dbz9qk3mtonr1RvKT+1FGVxnxAx08I9K8Tl7j9hpoJRE7OCf+t10fng==
 
 "@types/lodash@^4.14.110":
   version "4.14.116"
@@ -2600,7 +2598,7 @@ bail@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/bail/-/bail-1.0.3.tgz#63cfb9ddbac829b02a3128cd53224be78e6c21a3"
 
-balanced-match@^0.4.0, balanced-match@^0.4.2:
+balanced-match@^0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
 
@@ -8485,12 +8483,13 @@ postcss-momentum-scrolling@^1.4.8:
   dependencies:
     postcss "^6.0.22"
 
-postcss-nested@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-4.1.0.tgz#271da8a047f2ee378139410ae2400b1c67d0bf30"
+postcss-nested@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-nested/-/postcss-nested-4.1.1.tgz#2074e6641583bf7151d951908d68fa95039fe340"
+  integrity sha512-3+V8+g+i9zUQ/AADNtBj3DVVvSOhRCV7W8Kzn9n4ViWJtSQrSdtIJnxZaupfdTrnhCkY86sAsuKVxBCuyfJDeA==
   dependencies:
-    postcss "^7.0.2"
-    postcss-selector-parser "^3.1.1"
+    postcss "^7.0.6"
+    postcss-selector-parser "^5.0.0-rc.4"
 
 postcss-nested@^4.1.1:
   version "4.1.1"
@@ -8562,12 +8561,13 @@ postcss-scss@^2.0.0:
   dependencies:
     postcss "^7.0.0"
 
-postcss-selector-matches@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-selector-matches/-/postcss-selector-matches-3.0.1.tgz#e5634011e13950881861bbdd58c2d0111ffc96ab"
+postcss-selector-matches@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-selector-matches/-/postcss-selector-matches-4.0.0.tgz#71c8248f917ba2cc93037c9637ee09c64436fcff"
+  integrity sha512-LgsHwQR/EsRYSqlwdGzeaPKVT0Ml7LAT6E75T8W8xLJY62CE4S/l03BWIt3jT8Taq22kXP08s2SfTSzaraoPww==
   dependencies:
-    balanced-match "^0.4.2"
-    postcss "^6.0.1"
+    balanced-match "^1.0.0"
+    postcss "^7.0.2"
 
 postcss-selector-matches@^4.0.0:
   version "4.0.0"
@@ -8585,7 +8585,7 @@ postcss-selector-parser@^2.0.0, postcss-selector-parser@^2.1.1:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss-selector-parser@^3.1.0, postcss-selector-parser@^3.1.1:
+postcss-selector-parser@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-3.1.1.tgz#4f875f4afb0c96573d5cf4d74011aee250a7e865"
   dependencies:
