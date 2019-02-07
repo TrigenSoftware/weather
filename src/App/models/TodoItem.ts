@@ -8,7 +8,7 @@ export interface ITodoItemProps {
 type TodoItem = ReturnType<Record.Factory<ITodoItemProps>>;
 
 const TodoItem = Record<ITodoItemProps>({
-	id: null,
+	id:   null,
 	text: null
 });
 

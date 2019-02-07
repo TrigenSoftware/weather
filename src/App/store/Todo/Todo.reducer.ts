@@ -5,15 +5,19 @@ import {
 	IEditTodoAction,
 	IRemoveTodoAction
 } from './Todo.types';
+import TodoItem from '~/models/TodoItem';
 
 export class TodoReducer extends Reducer {
 
 	static namespace = 'todo';
 
 	add(state: TodoState, { payload }: IAddTodoAction) {
+
+		const item = TodoItem(payload);
+
 		return state.set(
-			'todos',
-			state.todos.push(payload)
+			'items',
+			state.items.push(item)
 		);
 	}
 
@@ -23,20 +27,25 @@ export class TodoReducer extends Reducer {
 			id,
 			text
 		} = payload;
-		const { todos } = state;
-		const index = todos.findIndex(_ => _.id === id);
-		const nextItem = todos.get(index).set('text', text);
+		const { items } = state;
+		const index = items.findIndex(_ => _.id === id);
+		const nextItem = items.get(index).set('text', text);
 
 		return state.set(
-			'todos',
-			todos.set(index, nextItem)
+			'items',
+			items.set(index, nextItem)
 		);
 	}
 
 	remove(state: TodoState, { payload }: IRemoveTodoAction) {
+
+		const id = payload;
+		const { items } = state;
+		const index = items.findIndex(_ => _.id === id);
+
 		return state.set(
-			'todos',
-			state.todos.remove(payload)
+			'items',
+			items.remove(index)
 		);
 	}
 }

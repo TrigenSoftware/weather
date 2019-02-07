@@ -1,3 +1,4 @@
+/* eslint-disable no-process-exit */
 import 'dotenv/config';
 import webpack from 'webpack';
 import {
@@ -12,13 +13,7 @@ webpackBuildCompiler.run((error, stats) => {
 
 	if (error) {
 		notifyError(error);
-		return;
-	}
-
-	if (stats.hasErrors()) {
-		notifyError(new Error('Compilation has failed.'));
-	} else {
-		notify('Compilation was done.');
+		process.exit(1);
 	}
 
 	process.stdout.write(`${stats.toString({
@@ -27,4 +22,15 @@ webpackBuildCompiler.run((error, stats) => {
 		modules:  false,
 		colors:   true
 	})}\n`);
+
+	if (stats.hasErrors()) {
+
+		const error = new Error('Compilation has failed.');
+
+		notifyError(error);
+		process.exit(1);
+
+	} else {
+		notify('Compilation was done.');
+	}
 });

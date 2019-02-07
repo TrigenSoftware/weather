@@ -21,8 +21,8 @@ export default function createStore() {
 	});
 	const store = new Store<State, IActions>({
 		storeCreator: createStore,
-		state: State(),
-		enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
+		state:        State(),
+		enhancer:     __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 	});
 
 	registerWeatherSegment(store);
