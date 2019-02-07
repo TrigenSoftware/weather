@@ -51,4 +51,11 @@ To be able to build this app, you should provide some environment variables:
 OPENWEATHER_APPID=XXX
 ```
 
+Optional variables:
+
+```
+PROXY_API_URI
+DISABLE_BROWSER_SYNC
+```
+
 You can create `.env` in project root with this variables.
