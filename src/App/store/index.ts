@@ -16,8 +16,8 @@ export default function createStore() {
 	const createStore = createLoguxCreator({
 		credentials: 'credentials',
 		subprotocol: '1.0.0',
-		server: 'ws://127.0.0.1:1337',
-		userId: 'userId'
+		server:      'ws://127.0.0.1:31337',
+		userId:      'userId'
 	});
 	const store = new Store<State, IActions>({
 		storeCreator: createStore,
