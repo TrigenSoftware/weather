@@ -71,28 +71,25 @@ function base({
 			}, */ {
 				test:    /\.tsx?$/,
 				exclude: /node_modules/,
-				use:     [
-					{
-						loader:  'awesome-typescript-loader',
-						options: {
-							forceIsolatedModules: true,
-							useCache:             true,
-							reportFiles:          [
-								'src/**/*.{ts,tsx}',
-								'!globals.d.ts'
-							],
-							useBabel:             true,
-							babelCore:            '@babel/core'
-						}
-					},
-					{
-						loader:  'tslint-loader',
-						options: {
-							emitErrors: true,
-							typeCheck:  true
-						}
+				use:     [{
+					loader:  'awesome-typescript-loader',
+					options: {
+						forceIsolatedModules: true,
+						useTranspileModule:   true,
+						useCache:             true,
+						reportFiles:          [
+							'src/**/*.{ts,tsx}',
+							'!globals.d.ts'
+						],
+						useBabel:             true,
+						babelCore:            '@babel/core'
 					}
-				]
+				}, {
+					loader:  'tslint-loader',
+					options: {
+						emitErrors: true
+					}
+				}]
 			}]
 		},
 		plugins: [
