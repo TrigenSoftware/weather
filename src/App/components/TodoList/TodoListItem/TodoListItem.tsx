@@ -3,12 +3,16 @@ import React, {
 	ChangeEvent,
 	PureComponent
 } from 'react';
-import stylesheet from './TodoItem.st.css';
+import stylesheet from './TodoListItem.st.css';
 
 interface IProps {
+	id: string;
 	value: string;
-	onSubmit?(value: string);
-	onDelete?();
+}
+
+interface IPrivateProps extends IProps {
+	onSubmit?(id: string, value: string);
+	onDelete?(id: string);
 }
 
 interface IState {
@@ -16,7 +20,7 @@ interface IState {
 	value: string;
 }
 
-export default class TodoItem extends PureComponent<IProps, IState> {
+export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureComponent<TProps, IState> {
 
 	static getDerivedStateFromProps(
 		{ value }: IProps,
@@ -86,34 +90,36 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 		);
 	}
 
-	onSubmit(event: FormEvent) {
+	private onSubmit(event: FormEvent) {
 
 		event.preventDefault();
 
 		const {
-			onSubmit
+			onSubmit,
+			id
 		} = this.props;
 		const {
 			value
 		} = this.state;
 
 		if (typeof onSubmit === 'function') {
-			onSubmit(value);
+			onSubmit(id, value);
 		}
 	}
 
-	onDelete() {
+	private onDelete() {
 
 		const {
-			onDelete
+			onDelete,
+			id
 		} = this.props;
 
 		if (typeof onDelete === 'function') {
-			onDelete();
+			onDelete(id);
 		}
 	}
 
-	onChange(event: ChangeEvent<HTMLInputElement>) {
+	private onChange(event: ChangeEvent<HTMLInputElement>) {
 
 		const {
 			value: nextValue
@@ -124,3 +130,9 @@ export default class TodoItem extends PureComponent<IProps, IState> {
 		}));
 	}
 }
+
+type TodoListItem = PrivateTodoListItem<IProps>;
+
+const TodoListItem = PrivateTodoListItem;
+
+export default TodoListItem;

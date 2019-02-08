@@ -8,8 +8,10 @@ import {
 } from '@storybook/addon-knobs/react';
 import {
 	getFakeData
-} from './TodoItem/TodoItem.mock';
-import TodoList from './';
+} from './TodoListItem/TodoListItem.mock';
+import TodoList, {
+	TodoListItem
+} from './';
 
 const events = {
 	onAdd: action('add'),
@@ -35,20 +37,22 @@ storiesOf('TodoList', module)
 			return (
 				<TodoList
 					{...events}
-					items={
-						Array.from({
-							length: number('Items count', 3)
-						}).map(() => {
+				>
+					{Array.from({
+						length: number('Items count', 3)
+					}).map(() => {
 
-							const fakeItem = getFakeData();
+						const fakeItem = getFakeData();
 
-							return {
-								id: fakeItem.id,
-								text: fakeItem.value
-							};
-						})
-					}
-				/>
+						return (
+							<TodoListItem
+								key={fakeItem.id}
+								id={fakeItem.id}
+								value={fakeItem.value}
+							/>
+						);
+					})}
+				</TodoList>
 			);
 		}
 	);

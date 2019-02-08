@@ -3,7 +3,7 @@ import React, {
 	ChangeEvent,
 	PureComponent
  } from 'react';
-import stylesheet from './TodoForm.st.css';
+import stylesheet from './TodoListForm.st.css';
 
 interface IProps {
 	onSubmit?(value: string);
@@ -13,7 +13,7 @@ interface IState {
 	value: string;
 }
 
-export default class TodoForm extends PureComponent<IProps, IState> {
+export default class TodoListForm extends PureComponent<IProps, IState> {
 
 	state = {
 		value: ''
@@ -53,7 +53,7 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 		);
 	}
 
-	onSubmit(event: FormEvent) {
+	private onSubmit(event: FormEvent) {
 
 		event.preventDefault();
 
@@ -73,7 +73,7 @@ export default class TodoForm extends PureComponent<IProps, IState> {
 		}));
 	}
 
-	onChange(event: ChangeEvent<HTMLInputElement>) {
+	private onChange(event: ChangeEvent<HTMLInputElement>) {
 
 		const {
 			value: nextValue

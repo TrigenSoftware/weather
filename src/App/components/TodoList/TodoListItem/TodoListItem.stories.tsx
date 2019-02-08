@@ -7,8 +7,8 @@ import {
 } from '@storybook/addon-knobs/react';
 import {
 	getFakeData
-} from './TodoItem.mock';
-import TodoItem from './';
+} from './TodoListItem.mock';
+import { PrivateTodoListItem } from './';
 
 const fakeData = getFakeData();
 
@@ -29,8 +29,9 @@ storiesOf('TodoItem', module)
 	.add(
 		'with basic data',
 		() => (
-			<TodoItem
+			<PrivateTodoListItem
 				{...events}
+				id={text('Id', fakeData.id)}
 				value={text('Value', fakeData.value)}
 			/>
 		)

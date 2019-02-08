@@ -1,27 +1,27 @@
 import React, {
-	PureComponent
+	ReactElement,
+	PureComponent,
+	Children,
+	cloneElement
 } from 'react';
-import TodoForm from './TodoForm';
-import TodoItem from './TodoItem';
+import TodoListForm from './TodoListForm';
+import TodoListItem from './TodoListItem';
 import stylesheet from './TodoList.st.css';
 
-type ItemId = string;
-
-interface IItem {
-	id: ItemId;
-	text: string;
-}
-
 interface IProps {
-	items: IItem[];
+	children: ReactElement<any>|ReactElement<any>[];
 	onAdd?(text: string);
-	onChange?(id: ItemId, text: string);
-	onDelete?(id: ItemId);
+	onChange?(id: string, text: string);
+	onDelete?(id: string);
 }
 
 interface IState {
 	value: string;
 }
+
+export {
+	TodoListItem
+};
 
 export default class TodoList extends PureComponent<IProps, IState> {
 
@@ -37,32 +37,29 @@ export default class TodoList extends PureComponent<IProps, IState> {
 	render() {
 
 		const {
-			items
+			children
 		} = this.props;
 
 		return (
 			<div
 				{...stylesheet('root', {}, this.props)}
 			>
-				<TodoForm
+				<TodoListForm
 					onSubmit={this.onAdd}
 				/>
-				{items.map(({
-					id,
-					text
-				}) => (
-					<TodoItem
-						key={id}
-						onSubmit={this.onChange(id)}
-						onDelete={this.onDelete(id)}
-						value={text}
-					/>
-				))}
+				{Children
+					.toArray(children)
+					.filter(Boolean)
+					.map((child: ReactElement<any>) => cloneElement(child, {
+						onSubmit: this.onChange,
+						onDelete: this.onDelete
+					}))
+				}
 			</div>
 		);
 	}
 
-	onAdd(value: string) {
+	private onAdd(value: string) {
 
 		const {
 			onAdd
@@ -73,29 +70,25 @@ export default class TodoList extends PureComponent<IProps, IState> {
 		}
 	}
 
-	onChange(id: ItemId) {
-		return (value: string) => {
+	private onChange(id: string, value: string) {
 
-			const {
-				onChange
-			} = this.props;
+		const {
+			onChange
+		} = this.props;
 
-			if (typeof onChange === 'function') {
-				onChange(id, value);
-			}
-		};
+		if (typeof onChange === 'function') {
+			onChange(id, value);
+		}
 	}
 
-	onDelete(id: ItemId) {
-		return () => {
+	private onDelete(id: string) {
 
-			const {
-				onDelete
-			} = this.props;
+		const {
+			onDelete
+		} = this.props;
 
-			if (typeof onDelete === 'function') {
-				onDelete(id);
-			}
-		};
+		if (typeof onDelete === 'function') {
+			onDelete(id);
+		}
 	}
 }
