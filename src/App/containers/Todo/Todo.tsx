@@ -12,7 +12,9 @@ import {
 } from '~/store/types';
 import { TodoSegment } from '~/store/segments';
 import Loading from '~/components/Loading';
-import TodoList from '~/components/TodoList';
+import TodoList, {
+	TodoListItem
+} from '~/components/TodoList';
 import stylesheet from './Todo.st.css';
 
 interface IProps extends ITodoStateProps {
@@ -67,16 +69,26 @@ class TodoContainer extends PureComponent<IProps> {
 				{...stylesheet('root')}
 			>
 				<TodoList
-					items={items.toArray()}
 					onAdd={this.onAdd}
 					onChange={this.onChange}
 					onDelete={this.onDelete}
-				/>
+				>
+					{items.map(({
+						id,
+						text
+					}) => (
+						<TodoListItem
+							key={id}
+							id={id}
+							value={text}
+						/>
+					)).toJS()}
+				</TodoList>
 			</main>
 		);
 	}
 
-	onAdd(text: string) {
+	private onAdd(text: string) {
 
 		const {
 			add
@@ -89,7 +101,7 @@ class TodoContainer extends PureComponent<IProps> {
 		});
 	}
 
-	onChange(id: string, text: string) {
+	private onChange(id: string, text: string) {
 
 		const {
 			edit
@@ -101,7 +113,7 @@ class TodoContainer extends PureComponent<IProps> {
 		});
 	}
 
-	onDelete(id: string) {
+	private onDelete(id: string) {
 
 		const {
 			remove

@@ -2,7 +2,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import TodoForm from './';
+import TodoListForm from './';
 
 const events = {
 	onSubmit: action('submit')
@@ -20,7 +20,7 @@ storiesOf('TodoForm', module)
 	.add(
 		'with basic data',
 		() => (
-			<TodoForm
+			<TodoListForm
 				{...events}
 			/>
 		)
