@@ -1,4 +1,4 @@
-import React, { PureComponent, ReactElement } from 'react';
+import React, { PureComponent, ReactElement, Children } from 'react';
 import Menu, { MenuItem } from '@flexis/ui/components/Menu';
 import stylesheet from './Navigator.st.css';
 
@@ -19,7 +19,14 @@ export default class Navigator extends PureComponent<IProps> {
 			<Menu
 				{...stylesheet('root', {}, props)}
 			>
-				{children.map((link, i) => <MenuItem key={i}>{link}</MenuItem>)}
+				{Children
+					.toArray(children)
+					.filter(Boolean)
+					.map((link, i) => (
+						<MenuItem key={i}>
+							{link}
+						</MenuItem>
+					))}
 			</Menu>
 		);
 	}
