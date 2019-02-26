@@ -7,21 +7,20 @@ interface IProps {
 }
 
 export default class Navigator extends PureComponent<IProps> {
+
 	render() {
 
 		const {
-   children,
-   ...props
-  } = this.props;
+			children,
+			...props
+		} = this.props;
 
 		return (
-   <div
-    {...stylesheet('root', {}, props)}
-   >
-    <Menu>
-        {children.map((link, i) => <MenuItem key={i}>{link}</MenuItem>)}
-    </Menu>
-   </div>
+			<Menu
+				{...stylesheet('root', {}, props)}
+			>
+				{children.map((link, i) => <MenuItem key={i}>{link}</MenuItem>)}
+			</Menu>
 		);
 	}
 }

@@ -13,7 +13,7 @@ Stylable API
 ---
 - ::item
 `;
-/* tslint:disable */
+
 storiesOf('Navigator', module)
     .addParameters({
 	info: stylableApi
