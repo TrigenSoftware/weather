@@ -27,13 +27,13 @@ export default class App extends PureComponent<IProps> {
 			>
 				<Navigator>
 					<Link to='/'>
-						Home
+					Home
 					</Link>
 					<Link to='/weather'>
-						Weather
+					Weather
 					</Link>
 					<Link to='/todo'>
-						Todo
+					Todo
 					</Link>
 				</Navigator>
 				<hr />
@@ -59,7 +59,7 @@ export default class App extends PureComponent<IProps> {
 	router(children: ReactChild) {
 
 		const {
-			disableRouter = false
+		disableRouter = false
 		} = this.props;
 
 		if (disableRouter) {
@@ -68,7 +68,7 @@ export default class App extends PureComponent<IProps> {
 
 		return (
 			<Router>
-				{children}
+			{children}
 			</Router>
 		);
 	}
