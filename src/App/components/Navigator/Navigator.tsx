@@ -24,9 +24,10 @@ export default class Navigator extends PureComponent<IProps> {
 					.filter(Boolean)
 					.map((link, i) => (
 						<MenuItem key={i}>
-						{link}
+							{link}
 						</MenuItem>
-					))}
+					))
+				}
 			</Menu>
 		);
 	}
