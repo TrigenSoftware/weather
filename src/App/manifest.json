@@ -1,0 +1,13 @@
+{
+	"name": "Weather",
+	"short_name": "Weather",
+	"description": "Architecture demo app.",
+	"dir": "auto",
+	"lang": "en-US",
+	"display": "standalone",
+	"orientation": "portrait",
+	"scope": "/",
+	"start_url": "/?homescreen=1",
+	"background_color": "black",
+	"theme_color": "black"
+  }
