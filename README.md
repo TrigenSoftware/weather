@@ -31,6 +31,8 @@ yarn lint:scripts
 yarn lint
 # Run tests with Jest
 yarn jest
+# Run type checking
+yarn typecheck
 # Run lint, tests and build
 yarn test
 # Generate docs for TypeScript sources
