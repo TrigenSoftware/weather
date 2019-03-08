@@ -20,42 +20,48 @@
 
 Architecture demo app.
 
-## Basic commands
-
-Start development server: 
+## Available scripts
 
 ```bash
-yarn start # or
-npm start
-```
-
-Build sources for production:
-
-```bash
-yarn build # or
-npm run build
-```
-
-Run tests:
-
-```bash
-yarn test # or
-npm test
+# Lint only styles
+yarn lint:styles
+# Lint only scripts
+yarn lint:scripts
+# Lint all sources
+yarn lint
+# Run tests with Jest
+yarn jest
+# Run type checking
+yarn typecheck
+# Run lint, tests and build
+yarn test
+# Generate docs for TypeScript sources
+yarn build:docs
+# Start Storybook
+yarn start:storybook
+# Build standalone Storybook bundle
+yarn build:storybook
+# Start development server
+yarn start
+# Build our bundle for production
+yarn build
+# Serve files from `build` directory
+yarn serve
 ```
 
 ## Environment variables
 
 To be able to build this app, you should provide some environment variables:
 
-```
-OPENWEATHER_APPID=XXX
+```bash
+OPENWEATHER_APPID=XXX # OpenWeather API App ID; not set by default
 ```
 
 Optional variables:
 
-```
-PROXY_API_URI
-DISABLE_BROWSER_SYNC
+```bash
+PROXY_API_URI='' # valid URI; not set by default
+DISABLE_BROWSER_SYNC=false # boolean; `false` by default
 ```
 
 You can create `.env` in project root with this variables.
