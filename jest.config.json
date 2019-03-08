@@ -1,14 +1,7 @@
 {
-	"moduleFileExtensions": [
-		"ts",
-		"tsx",
-		"js",
-		"jsx",
-		"json"
-	],
 	"testRegex": "/src/App/.*(\\.|/)spec\\.ts$",
 	"transform": {
-		"^.+\\.tsx?$": "ts-jest"
+		"^.+\\.(jsx?|tsx?)$": "babel-jest"
 	},
 	"moduleNameMapper": {
 		"~(.*)$": "<rootDir>/src/App/$1"
@@ -24,18 +17,5 @@
 	"coverageReporters": [
 		"lcovonly",
 		"text"
-	],
-	"globals": {
-		"ts-jest": {
-			"babelConfig": {
-				"presets": [
-					["babel-preset-trigen", {
-						"targets": { "node": "current" },
-						"commonjs": true,
-						"react": true
-					}]
-				]
-			}
-		}
-	}
+	]
 }

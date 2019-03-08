@@ -22,7 +22,7 @@ storiesOf('WeatherList', module)
 		info: stylableApi
 	})
 	.add(
-		'with 5 items',
+		'with items',
 		() => {
 
 			button('Generate new data', () => {});

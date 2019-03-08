@@ -47,7 +47,7 @@ export default class TodoListForm extends PureComponent<IProps, IState> {
 				<button
 					{...stylesheet('button')}
 				>
-					add
+					Add
 				</button>
 			</form>
 		);

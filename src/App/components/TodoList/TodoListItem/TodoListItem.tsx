@@ -84,7 +84,7 @@ export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureCompo
 					type='button'
 					onClick={this.onDelete}
 				>
-					delete
+					Delete
 				</button>
 			</form>
 		);
