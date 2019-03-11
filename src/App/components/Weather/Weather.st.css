@@ -15,12 +15,12 @@
 }
 
 .temp {
-	line-height: 1;
+	line-height: 1em;
 	font-size: 10em;
 }
 
 .root:smSize .temp {
-	line-height: 1.2;
+	line-height: 1.2em;
 	font-size: 2em;
 }
 
@@ -29,12 +29,12 @@
 }
 
 .description {
-	line-height: 1;
+	line-height: 1em;
 	font-size: 3em;
 }
 
 .root:smSize .description {
-	line-height: 1.2;
+	line-height: 1.2em;
 	font-size: 1.2em;
 }
 
