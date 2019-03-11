@@ -6,11 +6,16 @@ class Navigator extends Component {
 
 	render() {
 
-		const children = this.props.children;
+		const { children } = this.props;
 
 		return (
 			<Menu>
-				{Children.map(children, (child, i) => <MenuItem key={i}>{child}</MenuItem>)}
+				{children && Children.map(children, (child, i) =>
+				(
+					<MenuItem key={i}>
+						{child}
+					</MenuItem>)
+				)}
 			</Menu>
 		);
 	}

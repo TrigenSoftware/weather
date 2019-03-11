@@ -26,9 +26,15 @@ export default class App extends PureComponent<IProps> {
 				{...stylesheet('root')}
 			>
 				<Navigator>
-					<Link to='/'>Home</Link>
-					<Link to='/weather'>Weather</Link>
-					<Link to='/todo'>Todo</Link>
+					<Link to='/'>
+						Home
+					</Link>
+					<Link to='/weather'>
+						Weather
+					</Link>
+					<Link to='/todo'>
+						Todo
+					</Link>
 				</Navigator>
 				<hr/>
 				<Route
