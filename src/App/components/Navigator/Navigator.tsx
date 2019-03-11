@@ -1,14 +1,17 @@
-import React from 'react';
-import stylesheet from './Navigator.st.css';
+import React, { Children, Component } from 'react';
+import Menu from '@flexis/ui/components/Menu';
+import { MenuItem } from '@flexis/ui/components/Menu/MenuItem';
 
-class Navigator extends React.Component {
+class Navigator extends Component {
 
 	render() {
+
 		const children = this.props.children;
+
 		return (
-			<ul {...stylesheet('root', {}, this.props)}>
-				{React.Children.map(children, (child, i) => <li key={i}>{child}</li>)}
-			</ul>
+			<Menu>
+				{Children.map(children, (child, i) => <MenuItem key={i}>{child}</MenuItem>)}
+			</Menu>
 		);
 	}
 }
