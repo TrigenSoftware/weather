@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import stylesheet from './Navigator.st.css';
 
-class Navigator extends Component {
+class Navigator extends React.Component {
+
 	render() {
+		const children = this.props.children;
 		return (
 			<ul {...stylesheet('root', {}, this.props)}>
-				<li><Link to='/'>Home</Link></li>
-				<li><Link to='/weather'>Weather</Link></li>
-				<li><Link to='/todo'>Todo</Link></li>
+				{React.Children.map(children, (child, i) => <li key={i}>{child}</li>)}
 			</ul>
 		);
 	}

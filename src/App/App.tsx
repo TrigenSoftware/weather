@@ -5,7 +5,8 @@ import React, {
 import { hot } from 'react-hot-loader';
 import {
 	BrowserRouter as Router,
-	Route
+	Route,
+	Link
 } from 'react-router-dom';
 import Weather from '~/containers/Weather/loadable';
 import Todo from '~/containers/Todo/loadable';
@@ -24,7 +25,11 @@ export default class App extends PureComponent<IProps> {
 			<div
 				{...stylesheet('root')}
 			>
-				<Navigator/>
+				<Navigator>
+					<Link to='/'>Home</Link>
+					<Link to='/weather'>Weather</Link>
+					<Link to='/todo'>Todo</Link>
+				</Navigator>
 				<hr/>
 				<Route
 					path='/'
