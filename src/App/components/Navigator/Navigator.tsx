@@ -5,17 +5,11 @@ import stylesheet from './Navigator.st.css';
 class Navigator extends Component {
 	render() {
 		return (
-			<div {...stylesheet('root', {}, this.props)}>
-				<Link to='/'>
-					Home
-                </Link>
-				<Link to='/weather'>
-					Weather
-                </Link>
-				<Link to='/todo'>
-					Todo
-                </Link>
-			</div>
+			<ul {...stylesheet('root', {}, this.props)}>
+				<li><Link to='/'>Home</Link></li>
+				<li><Link to='/weather'>Weather</Link></li>
+				<li><Link to='/todo'>Todo</Link></li>
+			</ul>
 		);
 	}
 }
