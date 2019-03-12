@@ -1,6 +1,7 @@
 import React, { Children, Component } from 'react';
 import Menu from '@flexis/ui/components/Menu';
 import { MenuItem } from '@flexis/ui/components/Menu/MenuItem';
+import stylesheet from './Navigator.st.css';
 
 class Navigator extends Component {
 
@@ -11,16 +12,12 @@ class Navigator extends Component {
 		} = this.props;
 
 		return (
-			<Menu>
-				{Children.map(children, (child, i) => {
-					if (!child) {
-						return null;
-					}
-					return (
-						<MenuItem key={i}>
-							{child}
-						</MenuItem>);
-				})}
+			<Menu {...stylesheet('root', {}, this.props)}>
+				{Children.map(children, (child, i) => child && (
+					<MenuItem {...stylesheet('item', {}, this.props)} key={i}>
+						{child}
+					</MenuItem>
+				))}
 			</Menu>
 		);
 	}
