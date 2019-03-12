@@ -23,7 +23,7 @@ export default class WeatherList extends PureComponent<IProps> {
 			<ul
 				{...stylesheet('root', {}, props)}
 			>
-				{Children.map(children, (child: ReactElement<any>) => (
+				{Children.map(children, (child: ReactElement<any>) => child && (
 					<li
 						{...stylesheet('item')}
 					>
