@@ -3,7 +3,7 @@ import Menu from '@flexis/ui/components/Menu';
 import { MenuItem } from '@flexis/ui/components/Menu/MenuItem';
 import stylesheet from './Navigator.st.css';
 
-class Navigator extends Component {
+export default class Navigator extends Component {
 
 	render() {
 
@@ -14,7 +14,9 @@ class Navigator extends Component {
 		return (
 			<Menu {...stylesheet('root', {}, this.props)}>
 				{Children.map(children, child => child && (
-					<MenuItem {...stylesheet('item', {}, this.props)}>
+					<MenuItem
+						{...stylesheet('item')}
+					>
 						{child}
 					</MenuItem>
 				))}
@@ -22,5 +24,3 @@ class Navigator extends Component {
 		);
 	}
 }
-
-export default Navigator;
