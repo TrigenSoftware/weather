@@ -13,8 +13,8 @@ class Navigator extends Component {
 
 		return (
 			<Menu {...stylesheet('root', {}, this.props)}>
-				{Children.map(children, (child, i) => child && (
-					<MenuItem {...stylesheet('item', {}, this.props)} key={i}>
+				{Children.map(children, child => child && (
+					<MenuItem {...stylesheet('item', {}, this.props)}>
 						{child}
 					</MenuItem>
 				))}
