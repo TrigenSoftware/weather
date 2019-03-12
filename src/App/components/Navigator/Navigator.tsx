@@ -12,8 +12,8 @@ class Navigator extends Component {
 
 		return (
 			<Menu>
-				{children && Children.map(this.props.children, (child, i) => {
-					if (!children[i].props.children) {
+				{Children.map(children, (child, i) => {
+					if (!child) {
 						return null;
 					}
 					return (
