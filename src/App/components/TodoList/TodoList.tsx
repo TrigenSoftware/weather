@@ -48,7 +48,7 @@ export default class TodoList extends PureComponent<IProps, IState> {
 					onSubmit={this.onAdd}
 				/>
 				{Children.map(children, (child: ReactElement<any>) => child && (
-					cloneElement(child as ReactElement<any>, {
+					cloneElement(child, {
 						onSubmit: this.onChange,
 						onDelete: this.onDelete
 					})
