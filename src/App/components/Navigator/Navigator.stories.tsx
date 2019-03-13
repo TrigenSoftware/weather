@@ -20,10 +20,10 @@ storiesOf('Navigator', module)
 		info: stylableApi
 	})
 	.add(
-		'with basic data',
+		'with 3 items',
 		() => {
 
-			button('Generate new data', () => {});
+			button('Generate new data', () => { });
 
 			return (
 				<Navigator>
@@ -34,9 +34,12 @@ storiesOf('Navigator', module)
 						const fakeItem = getFakeData();
 
 						return (
-							<a key={fakeItem.id} href={`#${fakeItem.id}`}>
-                                {fakeItem.value}
-                            </a>
+							<a
+								key={fakeItem.id}
+								href={`#${fakeItem.id}`}
+							>
+								{fakeItem.value}
+							</a>
 						);
 					})}
 				</Navigator>
