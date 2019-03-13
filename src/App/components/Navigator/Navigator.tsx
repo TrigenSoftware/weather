@@ -16,7 +16,9 @@ export default class Navigator extends Component {
 		} = this.props;
 
 		return (
-			<Menu {...stylesheet('root', {}, this.props)}>
+			<Menu
+				{...stylesheet('root', {}, this.props)}
+			>
 				{Children.map(children, child => child && (
 					<MenuItem
 						{...stylesheet('item')}

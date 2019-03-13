@@ -38,7 +38,7 @@ storiesOf('Navigator', module)
 								key={fakeItem.id}
 								href={`#${fakeItem.id}`}
 							>
-								{fakeItem.value}
+								{fakeItem.text}
 							</a>
 						);
 					})}
