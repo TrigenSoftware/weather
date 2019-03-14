@@ -12,6 +12,9 @@
   "bugs": {
     "url": "https://github.com/TrigenSoftware/weather/issues"
   },
+  "os": [
+    "!win32"
+  ],
   "scripts": {
     "lint:styles": "trigen-scripts lint:styles",
     "lint:scripts": "trigen-scripts lint:scripts",
