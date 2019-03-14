@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import Weather from '~/containers/Weather/loadable';
 import Todo from '~/containers/Todo/loadable';
+import Navigator from '~/components/Navigator';
 import stylesheet from './App.st.css';
 
 interface IProps {
@@ -24,23 +25,17 @@ export default class App extends PureComponent<IProps> {
 			<div
 				{...stylesheet('root')}
 			>
-				<ul>
-					<li>
-						<Link to='/'>
-							Home
-						</Link>
-					</li>
-					<li>
-						<Link to='/weather'>
-							Weather
-						</Link>
-					</li>
-					<li>
-						<Link to='/todo'>
-							Todo
-						</Link>
-					</li>
-				</ul>
+				<Navigator>
+					<Link to='/'>
+						Home
+					</Link>
+					<Link to='/weather'>
+						Weather
+					</Link>
+					<Link to='/todo'>
+						Todo
+					</Link>
+				</Navigator>
 				<hr/>
 				<Route
 					path='/'
