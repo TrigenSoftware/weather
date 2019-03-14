@@ -20,6 +20,8 @@ const events = {
 const stylableApi = `
 Stylable API
 ---
+- ::input
+- ::button
 `;
 
 storiesOf('TodoItem', module)

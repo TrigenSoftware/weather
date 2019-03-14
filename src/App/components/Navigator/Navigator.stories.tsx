@@ -13,6 +13,7 @@ import Navigator from './';
 const stylableApi = `
 Stylable API
 ---
+- ::item
 `;
 
 storiesOf('Navigator', module)
