@@ -1,9 +1,10 @@
 import React, {
 	FormEvent,
-	ChangeEvent,
 	PureComponent
 } from 'react';
 import stylesheet from './TodoListItem.st.css';
+import Button from '../../Button';
+import Input from '../../Input';
 
 interface IProps {
 	id: string;
@@ -66,26 +67,26 @@ export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureCompo
 				onSubmit={this.onSubmit}
 				{...stylesheet('root', {}, this.props)}
 			>
-				<input
+				<Input
 					{...stylesheet('input')}
 					type='text'
 					onChange={this.onChange}
 					value={value}
 				/>
 				{valueWasChanged && (
-					<button
+					<Button
 						{...stylesheet('button')}
 					>
 						Save
-					</button>
+					</Button>
 				)}
-				<button
+				<Button
 					{...stylesheet('button')}
 					type='button'
 					onClick={this.onDelete}
 				>
 					Delete
-				</button>
+				</Button>
 			</form>
 		);
 	}
@@ -119,14 +120,10 @@ export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureCompo
 		}
 	}
 
-	private onChange(event: ChangeEvent<HTMLInputElement>) {
-
-		const {
-			value: nextValue
-		} = event.target;
+	private onChange(value: string) {
 
 		this.setState(() => ({
-			value: nextValue
+			value
 		}));
 	}
 }
