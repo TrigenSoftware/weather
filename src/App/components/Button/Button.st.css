@@ -8,7 +8,6 @@
 	textColor: white;
 	backgroundColor: #007bff;
 	backgroundColorHover: #0069d9;
-	backgroundColorFocus: #0069d9;
 }
 
 Button {
@@ -22,14 +21,8 @@ Button {
 	font-size: 1rem;
 }
 
-Button:hover {
+Button:hover, Button:focus {
 	border-color: value(backgroundColorHover);
 	background-color: value(backgroundColorHover);
-	color: value(textColor);
-}
-
-Button:focus {
-	border-color: value(backgroundColorFocus);
-	background-color: value(backgroundColorFocus);
 	color: value(textColor);
 }
