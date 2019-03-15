@@ -1,3 +1,2 @@
-import Input from '@flexis/ui/components/Input';
-
-export default Input;
+export { default } from '@flexis/ui/components/Input';
+export * from '@flexis/ui/components/Input';

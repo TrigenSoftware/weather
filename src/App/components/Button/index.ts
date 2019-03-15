@@ -1,3 +1,2 @@
-import Button from '@flexis/ui/components/Button';
-
-export default Button;
+export { default } from '@flexis/ui/components/Button';
+export * from '@flexis/ui/components/Button';

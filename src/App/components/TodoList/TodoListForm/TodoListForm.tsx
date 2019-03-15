@@ -3,8 +3,8 @@ import React, {
 	PureComponent
  } from 'react';
 import stylesheet from './TodoListForm.st.css';
-import Button from '../../Button';
-import Input from '../../Input';
+import Button from '~/components/Button';
+import Input from '~/components/Input';
 
 interface IProps {
 	onSubmit?(value: string);
