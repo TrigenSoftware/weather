@@ -1,0 +1,15 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Button/Button.st.css';
+	-st-default: Button;
+}
+
+:vars {
+	buttonColor: white;
+	buttonBackground: blue;
+}
+
+Button {
+	background: value(buttonBackground);
+	color: value(buttonColor);
+}

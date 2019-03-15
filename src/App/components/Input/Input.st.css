@@ -1,0 +1,13 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Input/Input.st.css';
+	-st-default: Input;
+}
+
+:vars {
+	inputBorderColor: blue;
+}
+
+Input::input {
+	border: 2px solid value(inputBorderColor);
+}
