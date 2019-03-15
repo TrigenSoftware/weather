@@ -5,9 +5,19 @@
 }
 
 :vars {
-	inputBorderColor: blue;
+	borderColor: #ced4da;
+	backgroundColor: white;
+}
+
+Input {
+	border-color: value(backgroundColor);
 }
 
 Input::input {
-	border: 2px solid value(inputBorderColor);
+	border: none;
+	padding-left: 10px;
+}
+
+Input::border {
+	border: 1px solid value(borderColor);
 }

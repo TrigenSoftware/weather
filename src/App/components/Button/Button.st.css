@@ -5,11 +5,31 @@
 }
 
 :vars {
-	buttonColor: white;
-	buttonBackground: blue;
+	textColor: white;
+	backgroundColor: #007bff;
+	backgroundColorHover: #0069d9;
+	backgroundColorFocus: #0069d9;
 }
 
 Button {
-	background: value(buttonBackground);
-	color: value(buttonColor);
+	border: 1px solid transparent;
+	border-radius: .25rem;
+	border-color: value(backgroundColor);
+	background-color: value(backgroundColor);
+	padding: .375rem .75rem;
+	line-height: 1.5;
+	color: value(textColor);
+	font-size: 1rem;
+}
+
+Button:hover {
+	border-color: value(backgroundColorHover);
+	background-color: value(backgroundColorHover);
+	color: value(textColor);
+}
+
+Button:focus {
+	border-color: value(backgroundColorFocus);
+	background-color: value(backgroundColorFocus);
+	color: value(textColor);
 }
