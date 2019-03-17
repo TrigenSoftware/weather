@@ -11,6 +11,8 @@ const events = {
 const stylableApi = `
 Stylable API
 ---
+- ::input
+- ::button
 `;
 
 storiesOf('TodoForm', module)
