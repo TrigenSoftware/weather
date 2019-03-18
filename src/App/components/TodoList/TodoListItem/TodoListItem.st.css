@@ -11,3 +11,9 @@
 .button {
 	width: 20%;
 }
+
+.input:focus-within,
+.button:focus {
+	position: relative;
+	z-index: 1;
+}

@@ -45,10 +45,12 @@ export default class TodoList extends PureComponent<IProps, IState> {
 				{...stylesheet('root', {}, this.props)}
 			>
 				<TodoListForm
+					{...stylesheet('form')}
 					onSubmit={this.onAdd}
 				/>
 				{Children.map(children, (child: ReactElement<any>) => child && (
 					cloneElement(child, {
+						...stylesheet('item', {}, child.props),
 						onSubmit: this.onChange,
 						onDelete: this.onDelete
 					})
