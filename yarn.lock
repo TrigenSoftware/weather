@@ -1198,15 +1198,15 @@
     sharp "^0.21.0"
     vinyl "^2.1.0"
 
-"@flexis/ui@^0.2.2-alpha":
-  version "0.2.2-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.2.2-alpha.tgz#663bb3a4e02217b1755e864eef3f0cc1d2295d68"
-  integrity sha512-bIQ4VXMA0AFAeTe46XUf3N1fHRZgHSS0yx07BrBULlplhjW6FUd6luimjSg+4TYvG/ZQrVPLzDYxqWqFCZ2ezw==
+"@flexis/ui@^0.4.0-alpha":
+  version "0.4.0-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.4.0-alpha.tgz#c023ddce6a83ed85d62451e7b7d104516b7efd43"
+  integrity sha512-1GBCzuxMGt7zlGsW2oeqwit4g8GxdNILgUar2qAGi58PkTOlMuQPYyaolOuwiDbLDRtgtRrtAujy+uuopeipzA==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@stylable/runtime" "^0.1.8"
+    "@stylable/runtime" "^1.0.4"
     "@types/prop-types" "^15.5.5"
-    "@types/react" "16.7.7"
+    "@types/react" "16.8.8"
     "@types/react-transition-group" "^2.0.13"
     react-input-mask "^2.0.3"
     react-transition-group "^2.4.0"
@@ -1800,11 +1800,6 @@
     find-config "^1.0.0"
     murmurhash "^0.0.2"
 
-"@stylable/runtime@^0.1.8":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-0.1.13.tgz#f3bbf4b06b05076c681d77cff5e29069bd9a409e"
-  integrity sha512-pHkfmTMJp0gi6zhFT0YJ/9e1hsKelXtmeIlcv0g20cOy5a3utCCYVOeHMqtD+7t9w2Y+b3ZYQMBrBLwUWybWvQ==
-
 "@stylable/runtime@^1.0.3", "@stylable/runtime@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-1.0.4.tgz#364011921a31a276d94b4afff6c22096e9d825be"
@@ -2157,14 +2152,6 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@16.7.7":
-  version "16.7.7"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.7.tgz#1e5e23e7dd922968ed4b484cdec00a5402c9f31b"
-  integrity sha512-dJiq7CKxD1XJ/GqmbnsQisFnzG4z5lntKBw9X9qeSrguxFbrrhGa8cK9s0ONBp8wL1EfGfofEDVhjen26U46pw==
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
 "@types/react@16.7.8":
   version "16.7.8"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.8.tgz#ca24ba280f79debfc86578278a503c6d917d402e"
@@ -2177,6 +2164,14 @@
   version "16.8.3"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.3.tgz#7b67956f682bea30a5a09b3242c0784ff196c848"
   integrity sha512-PjPocAxL9SNLjYMP4dfOShW/rj9FDBJGu3JFRt0zEYf77xfihB6fq8zfDpMrV6s82KnAi7F1OEe5OsQX25Ybdw==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@16.8.8":
+  version "16.8.8"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.8.tgz#4b60a469fd2469f7aa6eaa0f8cfbc51f6d76e662"
+  integrity sha512-xwEvyet96u7WnB96kqY0yY7qxx/pEpU51QeACkKFtrgjjXITQn0oO1iwPEraXVgh10ZFPix7gs1R4OJXF7P5sg==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
