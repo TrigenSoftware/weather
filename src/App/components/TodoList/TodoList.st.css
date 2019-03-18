@@ -2,3 +2,8 @@
 .root {
 	/* Empty block */
 }
+
+.form,
+.item {
+	margin-bottom: 15px;
+}

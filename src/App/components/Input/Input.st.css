@@ -13,11 +13,11 @@ Input {
 	border-color: value(colorBackground);
 }
 
+Input::border {
+	border: 1px solid value(colorBorder);
+}
+
 Input::input {
 	border: none;
 	padding: 0 10px;
-}
-
-Input::border {
-	border: 1px solid value(colorBorder);
 }

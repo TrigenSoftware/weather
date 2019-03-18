@@ -7,22 +7,28 @@
 :vars {
 	colorText: white;
 	colorBackground: #007bff;
-	colorBackgroundHover: #0069d9;
+	colorBackgroundHover: #3693f7;
+	colorBackgroundActive: #0063ce;
 }
 
 Button {
 	border: 1px solid transparent;
-	border-radius: .25rem;
+	border-radius: 0;
 	border-color: value(colorBackground);
 	background-color: value(colorBackground);
 	padding: .375rem .75rem;
 	line-height: 1.5;
 	color: value(colorText);
-	font-size: 1rem;
+	font-size: 1.6rem;
 }
 
-Button:hover, Button:focus {
+Button:hover,
+Button:focus {
 	border-color: value(colorBackgroundHover);
 	background-color: value(colorBackgroundHover);
-	color: value(colorText);
+}
+
+Button:active {
+	border-color: value(colorBackgroundActive);
+	background-color: value(colorBackgroundActive);
 }
