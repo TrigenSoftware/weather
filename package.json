@@ -51,6 +51,7 @@
   "devDependencies": {
     "@trigen/scripts": "^1.4.1",
     "@types/faker": "^4.1.4",
-    "faker": "^4.1.0"
+    "faker": "^4.1.0",
+    "moxios": "^0.4.0"
   }
 }
