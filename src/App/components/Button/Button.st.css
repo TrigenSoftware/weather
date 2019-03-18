@@ -5,24 +5,24 @@
 }
 
 :vars {
-	textColor: white;
-	backgroundColor: #007bff;
-	backgroundColorHover: #0069d9;
+	colorText: white;
+	colorBackground: #007bff;
+	colorBackgroundHover: #0069d9;
 }
 
 Button {
 	border: 1px solid transparent;
 	border-radius: .25rem;
-	border-color: value(backgroundColor);
-	background-color: value(backgroundColor);
+	border-color: value(colorBackground);
+	background-color: value(colorBackground);
 	padding: .375rem .75rem;
 	line-height: 1.5;
-	color: value(textColor);
+	color: value(colorText);
 	font-size: 1rem;
 }
 
 Button:hover, Button:focus {
-	border-color: value(backgroundColorHover);
-	background-color: value(backgroundColorHover);
-	color: value(textColor);
+	border-color: value(colorBackgroundHover);
+	background-color: value(colorBackgroundHover);
+	color: value(colorText);
 }

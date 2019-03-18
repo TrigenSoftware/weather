@@ -5,12 +5,12 @@
 }
 
 :vars {
-	borderColor: #ced4da;
-	backgroundColor: white;
+	colorBorder: #ced4da;
+	colorBackground: white;
 }
 
 Input {
-	border-color: value(backgroundColor);
+	border-color: value(colorBackground);
 }
 
 Input::input {
@@ -19,5 +19,5 @@ Input::input {
 }
 
 Input::border {
-	border: 1px solid value(borderColor);
+	border: 1px solid value(colorBorder);
 }
