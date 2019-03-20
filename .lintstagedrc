@@ -1,4 +1,4 @@
 {
-	"src/**/*.css": ["stylelint", "git add"],
-	"src/**/*.{ts,tsx}": ["tslint -p . -t stylish", "git add"]
+	"src/**/*.css": ["trigen-scripts lint:styles", "git add"],
+	"src/**/*.{ts,tsx}": ["trigen-scripts lint:ts", "git add"]
 }
