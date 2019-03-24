@@ -983,6 +983,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.4.2":
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.2.tgz#f5ab6897320f16decd855eed70b705908a313fe8"
+  integrity sha512-7Bl2rALb7HpvXFL7TETNzKSAeBVCPHELzc0C//9FCxN8nsiueWSJBqaF+2oIJScyILStASR/Cx5WMkXGYTiJFA==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.0.0", "@babel/template@^7.1.0", "@babel/template@^7.2.2", "@babel/template@^7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.4.0.tgz#12474e9c077bae585c5d835a95c0b0b790c25c8b"
@@ -1215,18 +1222,20 @@
     sharp "^0.21.0"
     vinyl "^2.1.0"
 
-"@flexis/ui@^0.4.0-alpha":
-  version "0.4.0-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.4.0-alpha.tgz#c023ddce6a83ed85d62451e7b7d104516b7efd43"
-  integrity sha512-1GBCzuxMGt7zlGsW2oeqwit4g8GxdNILgUar2qAGi58PkTOlMuQPYyaolOuwiDbLDRtgtRrtAujy+uuopeipzA==
+"@flexis/ui@^0.6.0-alpha":
+  version "0.6.0-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.6.0-alpha.tgz#1da7c20e3a9af686cb56526ad5d69674ed41e96e"
+  integrity sha512-tb6cne6DwxFmVaqoprSvRYSV9ILy1r2MgKQjAADHrARi7FcD4OC8aK50Loz/uDlCbrCwGtHlHjS8X1tv+dZxRw==
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.4.2"
     "@stylable/runtime" "^1.0.4"
     "@types/prop-types" "^15.5.5"
     "@types/react" "16.8.8"
     "@types/react-transition-group" "^2.0.13"
+    color "^3.1.0"
+    core-js "^3.0.0"
     react-input-mask "^2.0.3"
-    react-transition-group "^2.4.0"
+    react-transition-group "^2.7.0"
     resize-observer "^1.0.0-alpha.1"
     throttle-debounce "^2.0.1"
 
@@ -12217,10 +12226,20 @@ react-textarea-autosize@^7.0.4:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.0"
 
-react-transition-group@^2.2.1, react-transition-group@^2.4.0:
+react-transition-group@^2.2.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.6.1.tgz#abf4a95e2f13fb9ba83a970a896fedbc5c4856a2"
   integrity sha512-9DHwCy0aOYEe35frlEN68N9ut/THDQBLnVoQuKTvzF4/s3tk7lqkefCqxK2Nv96fOh6JXk6tQtliygk6tl3bQA==
+  dependencies:
+    dom-helpers "^3.3.1"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
+
+react-transition-group@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.7.0.tgz#60ca3bb2bf83fe71c50816a936e985ce7b8134dc"
+  integrity sha512-CzF22K0x6arjQO4AxkasMaiYcFG/QH0MhPNs45FmNsfWsQmsO9jv52sIZJAalnlryD5RgrrbLtV5CMJSokrrMA==
   dependencies:
     dom-helpers "^3.3.1"
     loose-envify "^1.4.0"
