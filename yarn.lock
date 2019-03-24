@@ -1215,11 +1215,12 @@
     sharp "^0.21.0"
     vinyl "^2.1.0"
 
-"@flexis/ui@^0.6.1-alpha":
-  version "0.6.1-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.6.1-alpha.tgz#c600522bb921c3ee4c8c0150b3c220fb5edf44e4"
-  integrity sha512-PgM2bU3DJvSYUovOCO2JIKCPw5C8kz0iLUbr5rDjANnIXKsskZoxDy4dURJwbyaYTI/6tqtRAfHSjg3TTHzjBw==
+"@flexis/ui@^0.6.2-alpha":
+  version "0.6.2-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.6.2-alpha.tgz#a7edfc52c2a3d4a63696645a848e5bb3b0ac9ce1"
+  integrity sha512-p4rRKEEkJPIINmzukTD1glICsxVInoQBS1T+RhtNq5ixOIn+U3W+y2OAmEBrXVRCzO4fbyubREa48efkx6IStQ==
   dependencies:
+    "@babel/runtime" "^7.4.2"
     "@stylable/runtime" "^1.0.4"
     "@types/prop-types" "^15.5.5"
     "@types/react" "16.8.8"
