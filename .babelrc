@@ -2,6 +2,7 @@
 	"exclude": "node_modules/**",
 	"presets": [
 		["babel-preset-trigen", {
+			"corejs": 2,
 			"react": true
 		}]
 	],
@@ -10,6 +11,7 @@
 			"presets": [
 				["babel-preset-trigen", {
 					"targets": { "node": "current" },
+					"corejs": 2,
 					"commonjs": true,
 					"typescript": true,
 					"react": true,
