@@ -983,6 +983,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.4.3":
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.3.tgz#79888e452034223ad9609187a0ad1fe0d2ad4bdc"
+  integrity sha512-9lsJwJLxDh/T3Q3SZszfWOTkk3pHbkmH+3KY+zwIDmsNlxsumuhS2TH3NIpktU4kNvfzy+k3eLT7aTJSPTo0OA==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.0.0", "@babel/template@^7.1.0", "@babel/template@^7.2.2", "@babel/template@^7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.4.0.tgz#12474e9c077bae585c5d835a95c0b0b790c25c8b"
@@ -1215,15 +1222,15 @@
     sharp "^0.21.0"
     vinyl "^2.1.0"
 
-"@flexis/ui@^0.6.2-alpha":
-  version "0.6.2-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.6.2-alpha.tgz#a7edfc52c2a3d4a63696645a848e5bb3b0ac9ce1"
-  integrity sha512-p4rRKEEkJPIINmzukTD1glICsxVInoQBS1T+RhtNq5ixOIn+U3W+y2OAmEBrXVRCzO4fbyubREa48efkx6IStQ==
+"@flexis/ui@^0.7.1-alpha":
+  version "0.7.1-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.7.1-alpha.tgz#8655e303231e63658e7388939e855e9249452805"
+  integrity sha512-9k2iZeDwFrDIpeITYi2C3XIXa4Td1+ns22NdAJBU6oJu0N7tMZuo5BBRwlsDo4CHbUIOMoger+WUkKdA8uSUJg==
   dependencies:
-    "@babel/runtime" "^7.4.2"
+    "@babel/runtime" "^7.4.3"
     "@stylable/runtime" "^1.0.4"
     "@types/prop-types" "^15.5.5"
-    "@types/react" "16.8.8"
+    "@types/react" "16.8.12"
     "@types/react-transition-group" "^2.0.13"
     color "^3.1.0"
     react-input-mask "^2.0.3"
@@ -2178,6 +2185,14 @@
   version "16.7.8"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.8.tgz#ca24ba280f79debfc86578278a503c6d917d402e"
   integrity sha512-7Vua2IYokMiPBk0WWXaDt4Cg3XVcwU6HpkuPhvwhBrVEy4SafpcvEfGYByoY9jxyFMiegYQPaSOT+H+AY00CPw==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@16.8.12":
+  version "16.8.12"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.12.tgz#ffbdd7bcd2b7037c3f78e26c708922a2befbb71f"
+  integrity sha512-MZZiv11BQhsxFp5DHDmRKBi6Nv3jwOhRiFFDE7ZJ1+rb52gdOd9y/qY0+5wyV/PQVK9926wFMjpQj3BJ18pb4Q==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
