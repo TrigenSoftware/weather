@@ -1,14 +1,16 @@
 /* tslint:disable:no-magic-numbers */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import {
+	storiesOf
+} from '@storybook/react';
 import {
 	number,
 	button
 } from '@storybook/addon-knobs/react';
-import Weather from '~/components/Weather';
+import Weather from '../Weather';
 import {
 	getFakeData
-} from '~/components/Weather/Weather.mock';
+} from '../Weather/Weather.mock';
 import WeatherList from './';
 
 const stylableApi = `

@@ -1,6 +1,8 @@
 /* tslint:disable:no-magic-numbers */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import {
+	storiesOf
+} from '@storybook/react';
 import {
 	text,
 	number,

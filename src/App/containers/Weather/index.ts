@@ -1,2 +1,2 @@
-export { default } from './Weather';
+export { default } from './connected';
 export * from './Weather';

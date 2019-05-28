@@ -1,49 +1,24 @@
 import React, {
 	PureComponent
 } from 'react';
-import { Connect } from '@flexis/redux';
 import {
 	ITodoStateProps,
-	State,
-	IActions,
 	AddTodoPayload,
 	EditTodoPayload,
 	RemoveTodoPayload
 } from '~/store/types';
-import { TodoSegment } from '~/store/segments';
-import Loading from '~/components/Loading';
 import TodoList, {
 	TodoListItem
 } from '~/components/TodoList';
 import stylesheet from './Todo.st.css';
 
-interface IProps extends ITodoStateProps {
+export interface IProps extends ITodoStateProps {
 	add(payload: AddTodoPayload);
 	edit(payload: EditTodoPayload);
 	remove(payload: RemoveTodoPayload);
 }
 
-function mapStateToProps({ todo }: State): ITodoStateProps {
-	return {
-		items: todo.items
-	};
-}
-
-function mapActionsToProps({ todo }: IActions) {
-	return {
-		add:    todo.add,
-		edit:   todo.edit,
-		remove: todo.remove
-	};
-}
-
-export default Connect({
-	dependsOn: TodoSegment,
-	loading:   Loading,
-	mapStateToProps,
-	mapActionsToProps
-})(
-class TodoContainer extends PureComponent<IProps> {
+export class TodoContainer extends PureComponent<IProps> {
 
 	constructor(props) {
 
@@ -121,4 +96,4 @@ class TodoContainer extends PureComponent<IProps> {
 
 		remove(id);
 	}
-});
+}

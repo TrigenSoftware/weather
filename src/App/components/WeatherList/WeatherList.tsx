@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import stylesheet from './WeatherList.st.css';
 
-interface IProps {
+export interface IProps {
 	children: ReactElement<any>[];
 }
 

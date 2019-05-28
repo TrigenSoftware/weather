@@ -1,2 +1,2 @@
-export { default } from './Todo';
+export { default } from './connected';
 export * from './Todo';

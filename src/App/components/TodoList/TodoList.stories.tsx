@@ -1,7 +1,11 @@
 /* tslint:disable:no-magic-numbers */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import {
+	storiesOf
+} from '@storybook/react';
+import {
+	action
+} from '@storybook/addon-actions';
 import {
 	button,
 	number
@@ -22,6 +26,7 @@ const events = {
 const stylableApi = `
 Stylable API
 ---
+_Empty_
 `;
 
 storiesOf('TodoList', module)

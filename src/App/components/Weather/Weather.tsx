@@ -1,7 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, {
+	PureComponent
+} from 'react';
 import stylesheet from './Weather.st.css';
 
-interface IProps {
+export interface IProps {
 	size?: 'sm';
 	date: string;
 	temp: number;

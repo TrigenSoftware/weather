@@ -3,8 +3,12 @@ import {
 	State,
 	IActions
 } from './types';
-import { registerWeatherSegment } from './Weather/register';
-import { registerTodoSegment } from './Todo/register';
+import {
+	registerWeatherSegment
+} from './Weather/register';
+import {
+	registerTodoSegment
+} from './Todo/register';
 
 const {
 	__REDUX_DEVTOOLS_EXTENSION__

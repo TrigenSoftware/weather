@@ -1,5 +1,7 @@
 import Store from '@flexis/redux';
-import { IActions } from '../types';
+import {
+	IActions
+} from '../types';
 import CITIES from '../cities';
 
 export const WeatherSegment = Symbol('weather');

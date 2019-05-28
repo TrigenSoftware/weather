@@ -20,7 +20,9 @@ const TodoState = Record<ITodoStateProps>({
 	items: List()
 });
 
-export { TodoState };
+export {
+	TodoState
+};
 
 /**
  * AddTodo action.

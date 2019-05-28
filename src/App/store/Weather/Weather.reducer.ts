@@ -1,4 +1,6 @@
-import { Reducer } from '@flexis/redux';
+import {
+	Reducer
+} from '@flexis/redux';
 import {
 	WeatherState,
 	ISetWeatherInfoAction

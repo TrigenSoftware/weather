@@ -1,7 +1,9 @@
 import 'dotenv/config';
 import moxios from 'moxios';
 import weatherClient from './client';
-import { getCurrentWeather } from './';
+import {
+	getCurrentWeather
+} from './';
 
 const MOCK_WEATHER_RESPONSE = {
 	weather: [{

@@ -5,10 +5,11 @@ import React, {
 	cloneElement
 } from 'react';
 import TodoListForm from './TodoListForm';
-import TodoListItem from './TodoListItem';
 import stylesheet from './TodoList.st.css';
 
-interface IProps {
+export * from './TodoListItem';
+
+export interface IProps {
 	children: ReactElement<any>|ReactElement<any>[];
 	onAdd?(text: string);
 	onChange?(id: string, text: string);
@@ -18,10 +19,6 @@ interface IProps {
 interface IState {
 	value: string;
 }
-
-export {
-	TodoListItem
-};
 
 export default class TodoList extends PureComponent<IProps, IState> {
 
