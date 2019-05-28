@@ -4,7 +4,6 @@
   "description": "Architecture demo app.",
   "author": "dangreen",
   "license": "MIT",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/TrigenSoftware/weather"
