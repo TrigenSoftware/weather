@@ -1,4 +1,6 @@
-import Axios, { CancelTokenSource } from 'axios';
+import Axios, {
+	CancelTokenSource
+} from 'axios';
 import qs from 'qs';
 
 export {
@@ -6,7 +8,9 @@ export {
 	qs
 };
 
-const { CancelToken } = Axios;
+const {
+	CancelToken
+} = Axios;
 
 Axios.defaults.responseType = 'json';
 

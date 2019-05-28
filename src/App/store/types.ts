@@ -1,5 +1,6 @@
 import {
-	Record } from 'immutable';
+	Record
+} from 'immutable';
 import {
 	WeatherState
 } from './Weather/Weather.types';
@@ -33,4 +34,6 @@ const State = Record<IStateProps>({
 	todo:    TodoState()
 });
 
-export { State };
+export {
+	State
+};

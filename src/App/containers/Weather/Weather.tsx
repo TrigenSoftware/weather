@@ -85,7 +85,9 @@ export class WatherContainer extends PureComponent<IProps> {
 
 		this.updateIntervalId = setInterval(() => {
 
-			const { city } = this.props;
+			const {
+				city
+			} = this.props;
 
 			this.props.loadWeatherInfo(city);
 
