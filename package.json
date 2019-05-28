@@ -4,6 +4,7 @@
   "description": "Architecture demo app.",
   "author": "dangreen",
   "license": "MIT",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/TrigenSoftware/weather"
@@ -28,27 +29,28 @@
     "serve": "trigen-scripts serve"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.5",
+    "@babel/runtime": "^7.4.2",
     "@flexis/redux": "^0.3.1-alpha",
-    "@flexis/ui": "^0.14.9-alpha",
+    "@flexis/ui": "^0.6.2-alpha",
+    "@loadable/component": "^5.10.1",
     "@stylable/runtime": "^1.0.3",
-    "@types/prop-types": "^15.7.1",
-    "@types/qs": "^6.5.3",
-    "@types/react": "16.8.18",
-    "@types/react-router-dom": "^4.3.3",
+    "@types/loadable__component": "^5.9.0",
+    "@types/prop-types": "^15.5.5",
+    "@types/qs": "^6.5.1",
+    "@types/react": "16.8.8",
+    "@types/react-router-dom": "^4.3.1",
     "axios": "^0.18.0",
     "immutable": "4.0.0-rc.12",
     "moment": "^2.22.2",
     "prop-types": "^15.6.0",
     "qs": "^6.7.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-loadable": "^5.5.0",
-    "react-router-dom": "^5.0.0",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0"
   },
   "devDependencies": {
-    "@trigen/scripts": "^1.10.2",
+    "@trigen/scripts": "^1.7.2",
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "moxios": "^0.4.0"
