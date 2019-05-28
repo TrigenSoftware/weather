@@ -2,7 +2,9 @@ import React, {
 	ReactChild,
 	PureComponent
 } from 'react';
-import { hot } from 'react-hot-loader';
+import {
+	hot
+} from 'react-hot-loader';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -13,7 +15,7 @@ import Todo from '~/containers/Todo/loadable';
 import Navigator from '~/components/Navigator';
 import stylesheet from './App.st.css';
 
-interface IProps {
+export interface IProps {
 	disableRouter?: boolean;
 }
 

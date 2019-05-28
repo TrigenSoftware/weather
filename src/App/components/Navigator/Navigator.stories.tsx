@@ -1,6 +1,8 @@
 /* tslint:disable:no-magic-numbers */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import {
+	storiesOf
+} from '@storybook/react';
 import {
 	button,
 	number
@@ -13,6 +15,7 @@ import Navigator from './';
 const stylableApi = `
 Stylable API
 ---
+- ::list
 - ::item
 `;
 

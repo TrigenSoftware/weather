@@ -1,4 +1,6 @@
-import { Record } from 'immutable';
+import {
+	Record
+} from 'immutable';
 
 export interface IWeatherDataProps {
 	date: string;

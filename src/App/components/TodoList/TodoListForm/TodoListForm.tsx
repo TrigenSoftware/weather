@@ -1,12 +1,11 @@
 import React, {
 	FormEvent,
+	ChangeEvent,
 	PureComponent
  } from 'react';
 import stylesheet from './TodoListForm.st.css';
-import Button from '~/components/Button';
-import Input from '~/components/Input';
 
-interface IProps {
+export interface ITodoListFormProps {
 	onSubmit?(value: string);
 }
 
@@ -14,7 +13,7 @@ interface IState {
 	value: string;
 }
 
-export default class TodoListForm extends PureComponent<IProps, IState> {
+export default class TodoListForm extends PureComponent<ITodoListFormProps, IState> {
 
 	state = {
 		value: ''
@@ -39,17 +38,17 @@ export default class TodoListForm extends PureComponent<IProps, IState> {
 				{...stylesheet('root', {}, this.props)}
 				onSubmit={this.onSubmit}
 			>
-				<Input
+				<input
 					{...stylesheet('input')}
 					type='text'
 					onChange={this.onChange}
 					value={value}
 				/>
-				<Button
+				<button
 					{...stylesheet('button')}
 				>
 					Add
-				</Button>
+				</button>
 			</form>
 		);
 	}
@@ -74,10 +73,10 @@ export default class TodoListForm extends PureComponent<IProps, IState> {
 		}));
 	}
 
-	private onChange(value: string) {
+	private onChange(event: ChangeEvent<HTMLInputElement>) {
 
 		this.setState(() => ({
-			value
+			value: event.target.value
 		}));
 	}
 }

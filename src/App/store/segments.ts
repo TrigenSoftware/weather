@@ -1,2 +1,6 @@
-export { WeatherSegment } from './Weather/register';
-export { TodoSegment } from './Todo/register';
+export {
+	WeatherSegment
+} from './Weather/register';
+export {
+	TodoSegment
+} from './Todo/register';

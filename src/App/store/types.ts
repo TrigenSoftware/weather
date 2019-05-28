@@ -1,8 +1,17 @@
-import { Record } from 'immutable';
-import { WeatherState } from './Weather/Weather.types';
-import { WeatherActions } from './Weather/Weather.actions';
-import { TodoState } from './Todo/Todo.types';
-import { TodoActions } from './Todo/Todo.actions';
+import {
+	Record } from 'immutable';
+import {
+	WeatherState
+} from './Weather/Weather.types';
+import {
+	WeatherActions
+} from './Weather/Weather.actions';
+import {
+	TodoState
+} from './Todo/Todo.types';
+import {
+	TodoActions
+} from './Todo/Todo.actions';
 
 export * from './Weather/Weather.types';
 export * from './Todo/Todo.types';

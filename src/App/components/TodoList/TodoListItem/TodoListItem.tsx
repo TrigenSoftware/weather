@@ -1,17 +1,13 @@
 import React, {
 	FormEvent,
+	ChangeEvent,
 	PureComponent
 } from 'react';
 import stylesheet from './TodoListItem.st.css';
-import Button from '~/components/Button';
-import Input from '~/components/Input';
 
-interface IProps {
+export interface ITodoListItemProps {
 	id: string;
 	value: string;
-}
-
-interface IPrivateProps extends IProps {
 	onSubmit?(id: string, value: string);
 	onDelete?(id: string);
 }
@@ -21,10 +17,10 @@ interface IState {
 	value: string;
 }
 
-export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureComponent<TProps, IState> {
+export class TodoListItem extends PureComponent<ITodoListItemProps, IState> {
 
 	static getDerivedStateFromProps(
-		{ value }: IProps,
+		{ value }: ITodoListItemProps,
 		{ originalValue: prevOriginalValue }: IState
 	) {
 
@@ -67,26 +63,26 @@ export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureCompo
 				onSubmit={this.onSubmit}
 				{...stylesheet('root', {}, this.props)}
 			>
-				<Input
+				<input
 					{...stylesheet('input')}
 					type='text'
 					onChange={this.onChange}
 					value={value}
 				/>
 				{valueWasChanged && (
-					<Button
+					<button
 						{...stylesheet('button')}
 					>
 						Save
-					</Button>
+					</button>
 				)}
-				<Button
+				<button
 					{...stylesheet('button')}
 					type='button'
 					onClick={this.onDelete}
 				>
 					Delete
-				</Button>
+				</button>
 			</form>
 		);
 	}
@@ -120,16 +116,10 @@ export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureCompo
 		}
 	}
 
-	private onChange(value: string) {
+	private onChange(event: ChangeEvent<HTMLInputElement>) {
 
 		this.setState(() => ({
-			value
+			value: event.target.value
 		}));
 	}
 }
-
-type TodoListItem = PrivateTodoListItem<IProps>;
-
-const TodoListItem = PrivateTodoListItem;
-
-export default TodoListItem;

@@ -1,4 +1,6 @@
-import { utc as Utc } from 'moment';
+import {
+	utc as Utc
+} from 'moment';
 import WeatherData from '~/models/WeatherData';
 
 export function weatherDataFromResponseData(responseData) {

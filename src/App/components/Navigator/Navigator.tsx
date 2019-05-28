@@ -2,9 +2,6 @@ import React, {
 	Children,
 	Component
 } from 'react';
-import Menu, {
-	MenuItem
-} from '@flexis/ui/components/Menu';
 import stylesheet from './Navigator.st.css';
 
 export default class Navigator extends Component {
@@ -16,17 +13,21 @@ export default class Navigator extends Component {
 		} = this.props;
 
 		return (
-			<Menu
+			<nav
 				{...stylesheet('root', {}, this.props)}
 			>
-				{Children.map(children, child => child && (
-					<MenuItem
-						{...stylesheet('item')}
-					>
-						{child}
-					</MenuItem>
-				))}
-			</Menu>
+				<ul
+					{...stylesheet('list')}
+				>
+					{Children.map(children, child => child && (
+						<li
+							{...stylesheet('item')}
+						>
+							{child}
+						</li>
+					))}
+				</ul>
+			</nav>
 		);
 	}
 }

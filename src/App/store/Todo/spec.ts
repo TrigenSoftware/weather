@@ -1,5 +1,7 @@
 import createStore from '../';
-import { TodoSegment } from './register';
+import {
+	TodoSegment
+} from './register';
 
 describe('Store', () => {
 
