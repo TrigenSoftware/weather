@@ -75,8 +75,12 @@ export default class TodoListForm extends PureComponent<ITodoListFormProps, ISta
 
 	private onChange(event: ChangeEvent<HTMLInputElement>) {
 
+		const {
+			value
+		} = event.target;
+
 		this.setState(() => ({
-			value: event.target.value
+			value
 		}));
 	}
 }
