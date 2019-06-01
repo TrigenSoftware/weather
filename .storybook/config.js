@@ -1,11 +1,9 @@
-import '@trigen/scripts/storybook/config';
 import React from 'react';
 import {
-	loadStories
-} from '@trigen/scripts/storybook/config';
-import {
-	addDecorator,
 	configure
+} from '@trigen/scripts-preset-react-app/storybook/config';
+import {
+	addDecorator
 } from '@storybook/react';
 import stylesheet from '@flexis/ui/reboot.st.css';
 
@@ -15,4 +13,4 @@ addDecorator(story => (
 	</div>
 ));
 
-configure(loadStories, module);
+configure(module);

@@ -50,7 +50,8 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
-    "@trigen/scripts": "^1.10.2",
+    "@trigen/scripts": "^2.0.0",
+    "@trigen/scripts-preset-react-app": "^2.0.0",
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "moxios": "^0.4.0"

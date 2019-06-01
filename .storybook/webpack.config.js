@@ -1,3 +1,3 @@
-const configureStorybook = require('@trigen/scripts/storybook/webpack.config');
+const configureStorybook = require('@trigen/scripts-preset-react-app/storybook/webpack.config');
 
 module.exports = configureStorybook;
