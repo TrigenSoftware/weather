@@ -32,7 +32,7 @@
     "@flexis/redux": "^0.3.1-alpha",
     "@flexis/ui": "^0.14.9-alpha",
     "@loadable/component": "^5.10.1",
-    "@stylable/runtime": "^1.0.3",
+    "@stylable/runtime": "^2.0.6",
     "@types/loadable__component": "^5.9.0",
     "@types/prop-types": "^15.7.1",
     "@types/qs": "^6.5.3",
