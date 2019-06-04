@@ -1890,10 +1890,15 @@
     find-config "^1.0.0"
     murmurhash "^0.0.2"
 
-"@stylable/runtime@^1.0.3", "@stylable/runtime@^1.0.4":
+"@stylable/runtime@^1.0.4":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-1.0.4.tgz#364011921a31a276d94b4afff6c22096e9d825be"
   integrity sha512-JGxmxe1UmMVNy9YpS8R4TV6LZhE6ucfSB4ueMuHgVYzXn/ZPmzIQ3ZpEvxAZpcMFRrNFzMjCkb7eSNEJBEY59g==
+
+"@stylable/runtime@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@stylable/runtime/-/runtime-2.0.6.tgz#62ba33e89736cbecee9359c11a2cb4bf0a91c8b9"
+  integrity sha512-YV3wxN+0qZIg+DOJGyKv0oexbMiRJOrb9D1EMf/PE31i70pIoN+yIWWvz4FZhPwNjNMoQd1LrNGldwa3kq/o9A==
 
 "@stylable/webpack-plugin@^1.1.4":
   version "1.1.4"
