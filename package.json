@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
-    "@flexis/redux": "^0.3.1-alpha",
-    "@flexis/ui": "^0.14.9-alpha",
+    "@flexis/redux": "^0.4.0-alpha",
+    "@flexis/ui": "^0.15.0-alpha",
     "@loadable/component": "^5.10.1",
     "@stylable/runtime": "^1.0.3",
     "@types/loadable__component": "^5.9.0",
@@ -39,6 +39,7 @@
     "@types/react": "16.8.19",
     "@types/react-router-dom": "^4.3.3",
     "axios": "^0.19.0",
+    "core-js": "3",
     "date-fns": "^2.0.0-alpha.27",
     "date-fns-timezone": "^0.1.4",
     "immutable": "4.0.0-rc.12",
@@ -50,8 +51,9 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
-    "@trigen/scripts": "^2.0.1",
-    "@trigen/scripts-preset-react-app": "^2.0.2",
+    "@trigen/scripts": "2",
+    "@trigen/scripts-plugin-eslint": "2",
+    "@trigen/scripts-preset-react-app": "2",
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "moxios": "^0.4.0"
