@@ -1,22 +1,28 @@
 {
 	"exclude": "node_modules/**",
 	"presets": [
-		["babel-preset-trigen", {
-			"corejs": 2,
-			"react": true
-		}]
+		[
+			"babel-preset-trigen",
+			{
+				"react": true
+			}
+		]
 	],
 	"env": {
 		"test": {
 			"presets": [
-				["babel-preset-trigen", {
-					"targets": { "node": "current" },
-					"corejs": 2,
-					"commonjs": true,
-					"typescript": true,
-					"react": true,
-					"transformDynamicImport": true
-				}]
+				[
+					"babel-preset-trigen",
+					{
+						"targets": {
+							"node": "current"
+						},
+						"commonjs": true,
+						"typescript": true,
+						"react": true,
+						"transformDynamicImport": true
+					}
+				]
 			]
 		}
 	}

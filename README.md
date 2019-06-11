@@ -1,8 +1,7 @@
+# weather
 
-# Weather
-
-[![Dependency status][deps]][deps-url]
-[![Dev dependency status][dev-deps]][dev-deps-url]
+[![Dependencies status][deps]][deps-url]
+[![Dev dependencies status][dev-deps]][dev-deps-url]
 [![Build status][build]][build-url]
 [![Greenkeeper badge][greenkeeper]][greenkeeper-url]
 
