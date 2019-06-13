@@ -1,6 +1,6 @@
 import React, {
-	PureComponent,
-	ChangeEvent
+	ChangeEvent,
+	Component
 } from 'react';
 import {
 	IWeatherStateProps
@@ -16,7 +16,7 @@ export interface IProps extends IWeatherStateProps {
 
 const UPDATE_INTERVAL = 10000;
 
-export class WatherContainer extends PureComponent<IProps> {
+export class WatherContainer extends Component<IProps> {
 
 	updateIntervalId: any = null;
 

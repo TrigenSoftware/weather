@@ -1,5 +1,5 @@
 import React, {
-	PureComponent
+	Component
 } from 'react';
 import {
 	ITodoStateProps,
@@ -18,7 +18,7 @@ export interface IProps extends ITodoStateProps {
 	remove(payload: RemoveTodoPayload);
 }
 
-export class TodoContainer extends PureComponent<IProps> {
+export class TodoContainer extends Component<IProps> {
 
 	constructor(props) {
 
