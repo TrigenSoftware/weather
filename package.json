@@ -31,7 +31,7 @@
     "@babel/runtime": "^7.4.5",
     "@flexis/redux": "^0.4.0-alpha",
     "@flexis/ui": "^0.15.0-alpha",
-    "@loadable/component": "^5.10.1",
+    "@loadable/component": "^5.10.2",
     "@stylable/runtime": "^1.0.3",
     "@types/loadable__component": "^5.9.0",
     "@types/prop-types": "^15.7.1",
