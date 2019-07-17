@@ -28,7 +28,7 @@
     "serve": "trigen-scripts serve"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.5",
+    "@babel/runtime": "^7.5.4",
     "@flexis/redux": "^0.4.0-alpha",
     "@flexis/ui": "^0.15.0-alpha",
     "@loadable/component": "^5.10.1",
