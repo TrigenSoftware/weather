@@ -28,16 +28,16 @@
     "serve": "trigen-scripts serve"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.5",
-    "@flexis/redux": "^0.4.0-alpha",
+    "@babel/runtime": "^7.5.5",
+    "@flexis/redux": "^0.4.2-alpha",
     "@flexis/ui": "^0.15.0-alpha",
-    "@loadable/component": "^5.10.1",
+    "@loadable/component": "^5.10.2",
     "@stylable/runtime": "^1.0.3",
-    "@types/loadable__component": "^5.9.0",
+    "@types/loadable__component": "^5.10.0",
     "@types/prop-types": "^15.7.1",
     "@types/qs": "^6.5.3",
-    "@types/react": "16.8.19",
-    "@types/react-router-dom": "^4.3.3",
+    "@types/react": "16.8.25",
+    "@types/react-router-dom": "^4.3.4",
     "axios": "^0.19.0",
     "core-js": "3",
     "date-fns": "^2.0.0-alpha.27",
@@ -48,7 +48,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "redux": "^4.0.0"
+    "redux": "^4.0.4"
   },
   "devDependencies": {
     "@trigen/scripts": "2",
