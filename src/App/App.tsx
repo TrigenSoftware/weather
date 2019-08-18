@@ -59,7 +59,7 @@ export default class App extends Component<IProps> {
 		);
 	}
 
-	router(children: ReactChild) {
+	private router(children: ReactChild) {
 
 		const {
 			disableRouter = false
