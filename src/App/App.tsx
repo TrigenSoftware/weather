@@ -1,6 +1,6 @@
 import React, {
 	ReactChild,
-	PureComponent
+	Component
 } from 'react';
 import {
 	hot
@@ -21,7 +21,7 @@ export interface IProps {
 }
 
 @hot(module)
-export default class App extends PureComponent<IProps> {
+export default class App extends Component<IProps> {
 
 	render() {
 		return this.router(
