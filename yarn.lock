@@ -1275,10 +1275,10 @@
     sharp "^0.22.1"
     vinyl "^2.1.0"
 
-"@flexis/ui@^0.19.0-alpha":
-  version "0.19.0-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.19.0-alpha.tgz#f7ad1fed514c4f4218e0f1634634439db44ec071"
-  integrity sha512-AVnAO4Li3xshWmzMIs1tr+f0eoSiTe7SrzlDBKUYpJyOJ6hO4TL/T1b/piZ+YVGxLN4R7p4pBqENZrtY3qQ2jA==
+"@flexis/ui@^0.20.0-alpha":
+  version "0.20.0-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.20.0-alpha.tgz#5865a653a945f1855fe19bfe7dbd3754491f00eb"
+  integrity sha512-iWMTWDcC3wt+KuJpFlNrh71CafDkfxHloeEPPKBolCXrqBxf/UsGbatPqMkxjcuzDw1ivq3bDNcFYj2/J6TR0g==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@stylable/runtime" "^1.0.4"
