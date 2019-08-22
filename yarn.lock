@@ -1230,18 +1230,17 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
   integrity sha512-n/VQ4mbfr81aqkx/XmVicOLjviMuy02eenSdJY33SVA7S2J42EU0P1H0mOogfYedb3wXA0d/LVtBrgTSm04WEA==
 
-"@flexis/redux@^0.4.4-alpha":
-  version "0.4.4-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/redux/-/redux-0.4.4-alpha.tgz#7ec24d5a2f0d2bcd7464ed4c62f7a9ac116dd33a"
-  integrity sha512-R/yGwzvjlM4qF+Ddsru+fAYvrYR/uECN6YdxXwbpnjgW0n39WTawfLLwruwipr8/Og43pOwa3eAiH8366AC2aQ==
+"@flexis/redux@^1.0.0-alpha":
+  version "1.0.0-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/redux/-/redux-1.0.0-alpha.tgz#954e855cdf86c86d554137c9d838d92db65cc1d5"
+  integrity sha512-pZLKEhfg4o2S0vy/gwv1GKwpRFRfka6Mc8YHk1Ez8LwYLAfWodCV3KjxkAiuvdth0r49LQX/Rz4CM8+jFbHqTQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
-    "@types/node" "^12.7.1"
+    "@types/node" "^12.7.2"
     "@types/prop-types" "^15.5.6"
-    "@types/react" "^16.8.19"
+    "@types/react" "^16.9.2"
     core-js "3"
     hoist-non-react-statics "^3.1.0"
-    immutable "4.0.0-rc.12"
 
 "@flexis/srcset-loader@^1.0.0":
   version "1.1.0"
@@ -2397,10 +2396,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.7.tgz#4f2563bad652b2acb1722d7e7aae2b0ff62d192c"
   integrity sha512-1YKeT4JitGgE4SOzyB9eMwO0nGVNkNEsm9qlIt1Lqm/tG2QEiSMTD4kS3aO6L+w5SClLVxALmIBESK6Mk5wX0A==
 
-"@types/node@^12.7.1":
-  version "12.7.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.1.tgz#3b5c3a26393c19b400844ac422bd0f631a94d69d"
-  integrity sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
+"@types/node@^12.7.2":
+  version "12.7.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.2.tgz#c4e63af5e8823ce9cc3f0b34f7b998c2171f0c44"
+  integrity sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -8233,15 +8232,15 @@ immutability-helper@^3.0.0:
   dependencies:
     invariant "^2.2.4"
 
-immutable@4.0.0-rc.12:
-  version "4.0.0-rc.12"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.12.tgz#ca59a7e4c19ae8d9bf74a97bdf0f6e2f2a5d0217"
-  integrity sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
-
 immutable@^3:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
   integrity sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+
+immutable@^4.0.0-rc.12:
+  version "4.0.0-rc.12"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.12.tgz#ca59a7e4c19ae8d9bf74a97bdf0f6e2f2a5d0217"
+  integrity sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
 
 import-cwd@^2.0.0:
   version "2.1.0"
