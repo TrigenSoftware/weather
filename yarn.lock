@@ -1034,14 +1034,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.4", "@babel/runtime@^7.4.5":
-  version "7.4.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
-  integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
-"@babel/runtime@^7.5.5":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
   integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
@@ -1283,10 +1276,10 @@
     sharp "^0.22.1"
     vinyl "^2.1.0"
 
-"@flexis/ui@^0.18.7-alpha":
-  version "0.18.7-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.18.7-alpha.tgz#0dd33cdb279dec6aadf8c75aa74526ccb6bf38e1"
-  integrity sha512-P1vAF0S4Nu+ljCRKnFAVH5ed0HhBiKgyu9ng6S6Sv65PhuGOkwLYe+yWdbDzC+4QQsOBmkOASfrzkuijj+PFlw==
+"@flexis/ui@^0.19.0-alpha":
+  version "0.19.0-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.19.0-alpha.tgz#f7ad1fed514c4f4218e0f1634634439db44ec071"
+  integrity sha512-AVnAO4Li3xshWmzMIs1tr+f0eoSiTe7SrzlDBKUYpJyOJ6hO4TL/T1b/piZ+YVGxLN4R7p4pBqENZrtY3qQ2jA==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@stylable/runtime" "^1.0.4"
