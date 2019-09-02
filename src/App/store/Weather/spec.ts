@@ -1,6 +1,10 @@
-import { List } from 'immutable';
+import {
+	List
+} from 'immutable';
 import createStore from '../';
-import { WeatherSegment } from './register';
+import {
+	WeatherSegment
+} from './register';
 import WeatherData from '~/models/WeatherData';
 
 describe('Store', () => {

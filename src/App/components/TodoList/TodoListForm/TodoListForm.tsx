@@ -5,7 +5,7 @@ import React, {
  } from 'react';
 import stylesheet from './TodoListForm.st.css';
 
-interface IProps {
+export interface ITodoListFormProps {
 	onSubmit?(value: string);
 }
 
@@ -13,7 +13,7 @@ interface IState {
 	value: string;
 }
 
-export default class TodoListForm extends PureComponent<IProps, IState> {
+export default class TodoListForm extends PureComponent<ITodoListFormProps, IState> {
 
 	state = {
 		value: ''
@@ -47,7 +47,7 @@ export default class TodoListForm extends PureComponent<IProps, IState> {
 				<button
 					{...stylesheet('button')}
 				>
-					add
+					Add
 				</button>
 			</form>
 		);
@@ -76,11 +76,11 @@ export default class TodoListForm extends PureComponent<IProps, IState> {
 	private onChange(event: ChangeEvent<HTMLInputElement>) {
 
 		const {
-			value: nextValue
+			value
 		} = event.target;
 
 		this.setState(() => ({
-			value: nextValue
+			value
 		}));
 	}
 }

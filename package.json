@@ -4,7 +4,6 @@
   "description": "Architecture demo app.",
   "author": "dangreen",
   "license": "MIT",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/TrigenSoftware/weather"
@@ -12,6 +11,9 @@
   "bugs": {
     "url": "https://github.com/TrigenSoftware/weather/issues"
   },
+  "os": [
+    "!win32"
+  ],
   "scripts": {
     "lint:styles": "trigen-scripts lint:styles",
     "lint:scripts": "trigen-scripts lint:scripts",
@@ -19,36 +21,41 @@
     "jest": "trigen-scripts jest",
     "test": "trigen-scripts test",
     "build:docs": "trigen-scripts build:docs",
-    "start:storybook": "trigen-scripts start:storybook",
-    "build:storybook": "trigen-scripts build:storybook",
+    "start:storybook": "trigen-scripts start:storybook -c .storybook",
+    "build:storybook": "trigen-scripts build:storybook -c .storybook",
     "start": "trigen-scripts start",
     "build": "trigen-scripts build",
     "serve": "trigen-scripts serve"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
-    "@flexis/redux": "^0.3.1-alpha",
-    "@flexis/ui": "^0.2.2-alpha",
+    "@babel/runtime": "^7.5.5",
+    "@flexis/redux": "^1.0.0-alpha",
+    "@flexis/ui": "^0.20.0-alpha",
+    "@loadable/component": "^5.10.2",
     "@stylable/runtime": "^1.0.3",
-    "@types/prop-types": "^15.5.5",
-    "@types/qs": "^6.5.1",
-    "@types/react": "16.7.12",
-    "@types/react-router-dom": "^4.3.1",
-    "axios": "^0.18.0",
-    "immutable": "4.0.0-rc.12",
-    "moment": "^2.22.2",
+    "@types/loadable__component": "^5.10.0",
+    "@types/prop-types": "^15.7.1",
+    "@types/qs": "^6.5.3",
+    "@types/react": "^16.9.2",
+    "@types/react-router-dom": "^4.3.5",
+    "axios": "^0.19.0",
+    "core-js": "3",
+    "date-fns": "^2.0.1",
+    "date-fns-timezone": "^0.1.4",
+    "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.6.0",
-    "qs": "^6.5.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-loadable": "^5.5.0",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
-    "workbox-precaching": "^4.0.0"
+    "qs": "^6.8.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.4"
   },
   "devDependencies": {
-    "@trigen/scripts": "^1.2.2",
+    "@trigen/scripts": "2.7.0",
+    "@trigen/scripts-plugin-eslint": "2.7.0",
+    "@trigen/scripts-preset-react-app": "2.11.1",
     "@types/faker": "^4.1.4",
-    "faker": "^4.1.0"
+    "faker": "^4.1.0",
+    "moxios": "^0.4.0"
   }
 }

@@ -22,7 +22,9 @@ const WeatherState = Record<IWeatherStateProps>({
 	weatherForecast: List()
 });
 
-export { WeatherState };
+export {
+	WeatherState
+};
 
 /**
  * SetWeatherInfo action.

@@ -5,7 +5,9 @@ import {
 	getCurrentWeather,
 	getWeatherForecast
 } from '~/services/weather';
-import { WeatherReducer } from './Weather.reducer';
+import {
+	WeatherReducer
+} from './Weather.reducer';
 
 export abstract class WeatherActions extends WeatherReducer.Actions {
 

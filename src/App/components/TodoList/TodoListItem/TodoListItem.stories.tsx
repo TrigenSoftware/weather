@@ -1,14 +1,20 @@
 /* tslint:disable:no-magic-numbers */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import {
+	storiesOf
+} from '@storybook/react';
+import {
+	action
+} from '@storybook/addon-actions';
 import {
 	text
 } from '@storybook/addon-knobs/react';
 import {
 	getFakeData
 } from './TodoListItem.mock';
-import { PrivateTodoListItem } from './';
+import {
+	TodoListItem
+} from './';
 
 const fakeData = getFakeData();
 
@@ -20,6 +26,8 @@ const events = {
 const stylableApi = `
 Stylable API
 ---
+- ::input
+- ::button
 `;
 
 storiesOf('TodoItem', module)
@@ -29,7 +37,7 @@ storiesOf('TodoItem', module)
 	.add(
 		'with basic data',
 		() => (
-			<PrivateTodoListItem
+			<TodoListItem
 				{...events}
 				id={text('Id', fakeData.id)}
 				value={text('Value', fakeData.value)}

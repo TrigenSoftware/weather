@@ -5,12 +5,9 @@ import React, {
 } from 'react';
 import stylesheet from './TodoListItem.st.css';
 
-interface IProps {
+export interface ITodoListItemProps {
 	id: string;
 	value: string;
-}
-
-interface IPrivateProps extends IProps {
 	onSubmit?(id: string, value: string);
 	onDelete?(id: string);
 }
@@ -20,10 +17,10 @@ interface IState {
 	value: string;
 }
 
-export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureComponent<TProps, IState> {
+export class TodoListItem extends PureComponent<ITodoListItemProps, IState> {
 
 	static getDerivedStateFromProps(
-		{ value }: IProps,
+		{ value }: ITodoListItemProps,
 		{ originalValue: prevOriginalValue }: IState
 	) {
 
@@ -84,7 +81,7 @@ export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureCompo
 					type='button'
 					onClick={this.onDelete}
 				>
-					delete
+					Delete
 				</button>
 			</form>
 		);
@@ -122,17 +119,11 @@ export class PrivateTodoListItem<TProps extends IPrivateProps> extends PureCompo
 	private onChange(event: ChangeEvent<HTMLInputElement>) {
 
 		const {
-			value: nextValue
+			value
 		} = event.target;
 
 		this.setState(() => ({
-			value: nextValue
+			value
 		}));
 	}
 }
-
-type TodoListItem = PrivateTodoListItem<IProps>;
-
-const TodoListItem = PrivateTodoListItem;
-
-export default TodoListItem;

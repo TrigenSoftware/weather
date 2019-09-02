@@ -1,46 +1,44 @@
 import React, {
 	ReactChild,
-	PureComponent
+	Component
 } from 'react';
-import { hot } from 'react-hot-loader';
+import {
+	hot
+} from 'react-hot-loader';
 import {
 	BrowserRouter as Router,
 	Route,
 	Link
 } from 'react-router-dom';
+import '@flexis/ui/reboot.st.css';
 import Weather from '~/containers/Weather/loadable';
 import Todo from '~/containers/Todo/loadable';
+import Navigator from '~/components/Navigator';
 import stylesheet from './App.st.css';
 
-interface IProps {
+export interface IProps {
 	disableRouter?: boolean;
 }
 
 @hot(module)
-export default class App extends PureComponent<IProps> {
+export default class App extends Component<IProps> {
 
 	render() {
 		return this.router(
 			<div
 				{...stylesheet('root')}
 			>
-				<ul>
-					<li>
-						<Link to='/'>
-							Home
-						</Link>
-					</li>
-					<li>
-						<Link to='/weather'>
-							Weather
-						</Link>
-					</li>
-					<li>
-						<Link to='/todo'>
-							Todo
-						</Link>
-					</li>
-				</ul>
+				<Navigator>
+					<Link to='/'>
+						Home
+					</Link>
+					<Link to='/weather'>
+						Weather
+					</Link>
+					<Link to='/todo'>
+						Todo
+					</Link>
+				</Navigator>
 				<hr/>
 				<Route
 					path='/'
@@ -61,7 +59,7 @@ export default class App extends PureComponent<IProps> {
 		);
 	}
 
-	router(children: ReactChild) {
+	private router(children: ReactChild) {
 
 		const {
 			disableRouter = false

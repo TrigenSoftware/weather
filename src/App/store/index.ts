@@ -1,10 +1,16 @@
-import Store from '@flexis/redux';
+import Store, {
+	ImmutableAdapter
+} from '@flexis/redux';
 import {
 	State,
 	IActions
 } from './types';
-import { registerWeatherSegment } from './Weather/register';
-import { registerTodoSegment } from './Todo/register';
+import {
+	registerWeatherSegment
+} from './Weather/register';
+import {
+	registerTodoSegment
+} from './Todo/register';
 
 const {
 	__REDUX_DEVTOOLS_EXTENSION__
@@ -13,6 +19,7 @@ const {
 export default function createStore() {
 
 	const store = new Store<State, IActions>({
+		adapter:  ImmutableAdapter,
 		state:    State(),
 		enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 	});

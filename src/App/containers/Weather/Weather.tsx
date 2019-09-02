@@ -1,48 +1,22 @@
 import React, {
-	PureComponent,
-	ChangeEvent
+	ChangeEvent,
+	Component
 } from 'react';
-import { Connect } from '@flexis/redux';
-// import { hot } from 'react-hot-loader';
 import {
-	IWeatherStateProps,
-	State,
-	IActions
+	IWeatherStateProps
 } from '~/store/types';
-import { WeatherSegment } from '~/store/segments';
 import CITIES from '~/store/cities';
-import Loading from '~/components/Loading';
 import Weather from '~/components/Weather';
 import WeatherList from '~/components/WeatherList';
 import stylesheet from './Weather.st.css';
 
-interface IProps extends IWeatherStateProps {
+export interface IProps extends IWeatherStateProps {
 	loadWeatherInfo(city: string);
 }
 
 const UPDATE_INTERVAL = 10000;
 
-function mapStateToProps({ weather }: State): IWeatherStateProps {
-	return {
-		city:            weather.city,
-		currentWeather:  weather.currentWeather,
-		weatherForecast: weather.weatherForecast
-	};
-}
-
-function mapActionsToProps({ weather }: IActions) {
-	return {
-		loadWeatherInfo: weather.loadWeatherInfo
-	};
-}
-
-export default Connect({
-	dependsOn: WeatherSegment,
-	loading:   Loading,
-	mapStateToProps,
-	mapActionsToProps
-})(
-class WatherContainer extends PureComponent<IProps> {
+export class WatherContainer extends Component<IProps> {
 
 	updateIntervalId: any = null;
 
@@ -111,7 +85,9 @@ class WatherContainer extends PureComponent<IProps> {
 
 		this.updateIntervalId = setInterval(() => {
 
-			const { city } = this.props;
+			const {
+				city
+			} = this.props;
 
 			this.props.loadWeatherInfo(city);
 
@@ -125,4 +101,4 @@ class WatherContainer extends PureComponent<IProps> {
 	private onCityChange({ currentTarget: { value } }: ChangeEvent<HTMLSelectElement>) {
 		this.props.loadWeatherInfo(value);
 	}
-});
+}

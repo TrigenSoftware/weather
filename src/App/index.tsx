@@ -1,6 +1,10 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from '@flexis/redux';
+import {
+	render
+} from 'react-dom';
+import {
+	Provider
+} from '@flexis/redux';
 // @ts-ignore
 import registerServiceWorker from './sw';
 import App from './App';

@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import stylesheet from './WeatherList.st.css';
 
-interface IProps {
+export interface IProps {
 	children: ReactElement<any>[];
 }
 
@@ -23,9 +23,8 @@ export default class WeatherList extends PureComponent<IProps> {
 			<ul
 				{...stylesheet('root', {}, props)}
 			>
-				{Children.map(children, (child: ReactElement<any>, i) => (
+				{Children.map(children, (child: ReactElement<any>) => child && (
 					<li
-						key={i}
 						{...stylesheet('item')}
 					>
 						{cloneElement(child, {

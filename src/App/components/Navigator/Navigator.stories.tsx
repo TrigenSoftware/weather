@@ -4,45 +4,33 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
-	action
-} from '@storybook/addon-actions';
-import {
 	button,
 	number
 } from '@storybook/addon-knobs/react';
 import {
 	getFakeData
-} from './TodoListItem/TodoListItem.mock';
-import TodoList, {
-	TodoListItem
-} from './';
-
-const events = {
-	onAdd: action('add'),
-	onChange: action('change'),
-	onDelete: action('delete')
-};
+} from './Navigator.mock';
+import Navigator from './';
 
 const stylableApi = `
 Stylable API
 ---
-_Empty_
+- ::list
+- ::item
 `;
 
-storiesOf('TodoList', module)
+storiesOf('Navigator', module)
 	.addParameters({
 		info: stylableApi
 	})
 	.add(
-		'with basic data',
+		'with 3 items',
 		() => {
 
-			button('Generate new data', () => {});
+			button('Generate new data', () => { });
 
 			return (
-				<TodoList
-					{...events}
-				>
+				<Navigator>
 					{Array.from({
 						length: number('Items count', 3)
 					}).map(() => {
@@ -50,14 +38,15 @@ storiesOf('TodoList', module)
 						const fakeItem = getFakeData();
 
 						return (
-							<TodoListItem
+							<a
 								key={fakeItem.id}
-								id={fakeItem.id}
-								value={fakeItem.value}
-							/>
+								href={`#${fakeItem.id}`}
+							>
+								{fakeItem.text}
+							</a>
 						);
 					})}
-				</TodoList>
+				</Navigator>
 			);
 		}
 	);

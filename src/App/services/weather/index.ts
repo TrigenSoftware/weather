@@ -1,7 +1,11 @@
-import { List } from 'immutable';
+import {
+	List
+} from 'immutable';
 import WeatherData from '~/models/WeatherData';
 import weatherClient from './client';
-import { weatherDataFromResponseData } from './adapters';
+import {
+	weatherDataFromResponseData
+} from './adapters';
 
 export async function getCurrentWeather(city: string) {
 

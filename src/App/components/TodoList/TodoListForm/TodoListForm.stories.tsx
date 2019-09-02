@@ -1,7 +1,11 @@
 /* tslint:disable:no-magic-numbers */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import {
+	storiesOf
+} from '@storybook/react';
+import {
+	action
+} from '@storybook/addon-actions';
 import TodoListForm from './';
 
 const events = {
@@ -11,6 +15,8 @@ const events = {
 const stylableApi = `
 Stylable API
 ---
+- ::input
+- ::button
 `;
 
 storiesOf('TodoForm', module)
