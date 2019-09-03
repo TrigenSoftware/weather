@@ -27,6 +27,16 @@ export {
 };
 
 /**
+ * SetCity action.
+ */
+
+export type SetCityPayload = string;
+
+export interface ISetCityAction {
+	payload: SetCityPayload;
+}
+
+/**
  * SetWeatherInfo action.
  */
 

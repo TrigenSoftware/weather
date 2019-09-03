@@ -20,7 +20,14 @@ async function loadWeatherSegmentConfig() {
 }
 
 async function loadInitialWeatherData(store: Store<any, IActions>) {
-	await store.actions.weather.loadWeatherInfo(CITIES[0]);
+
+	const {
+		setCity,
+		loadWeatherInfo
+	} = store.actions.weather;
+
+	setCity(CITIES[0]);
+	await loadWeatherInfo();
 }
 
 export function registerWeatherSegment(store: Store) {

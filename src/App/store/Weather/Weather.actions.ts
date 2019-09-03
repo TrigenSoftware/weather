@@ -1,4 +1,6 @@
 import {
+	WeatherState,
+	SetCityPayload,
 	SetWeatherInfoPayload
 } from './Weather.types';
 import {
@@ -9,19 +11,21 @@ import {
 	WeatherReducer
 } from './Weather.reducer';
 
-export abstract class WeatherActions extends WeatherReducer.Actions {
+export abstract class WeatherActions extends WeatherReducer.Actions<WeatherState> {
 
-	async loadWeatherInfo(city: string) {
+	async loadWeatherInfo(city?: string) {
 
-		const weatherForecast = await getWeatherForecast(city);
-		const currentWeather = await getCurrentWeather(city);
+		const targetCity = city || this.state.city;
+		const weatherForecast = await getWeatherForecast(targetCity);
+		const currentWeather = await getCurrentWeather(targetCity);
 
 		this.setWeatherInfo({
-			city,
+			city: targetCity,
 			currentWeather,
 			weatherForecast
 		});
 	}
 
+	abstract setCity(payload: SetCityPayload);
 	abstract setWeatherInfo(payload: SetWeatherInfoPayload);
 }

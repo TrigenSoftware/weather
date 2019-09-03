@@ -5,21 +5,13 @@ import {
 import {
 	Provider
 } from '@flexis/redux';
-// @ts-ignore
-import registerServiceWorker from './sw';
+import registerServiceWorker from './serviceWorker?tsw';
 import App from './App';
 import createStore from './store';
 
 async function main() {
 
-	registerServiceWorker({ scope: '/' }).then(() => {
-
-		console.log('Success!');
-
-		navigator.serviceWorker.addEventListener('message', (event) => {
-			console.log(JSON.stringify(event.data, null, '\t'));
-		});
-	});
+	registerServiceWorker({ scope: '/' });
 
 	const root = document.querySelector('#view');
 	const store = createStore();
