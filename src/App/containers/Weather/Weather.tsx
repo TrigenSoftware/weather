@@ -25,6 +25,7 @@ export class WatherContainer extends Component<IProps> {
 		super(props);
 
 		this.onCityChange = this.onCityChange.bind(this);
+		this.loadWeatherInfo = this.loadWeatherInfo.bind(this);
 	}
 
 	render() {
@@ -82,16 +83,8 @@ export class WatherContainer extends Component<IProps> {
 	}
 
 	componentDidMount() {
-
-		this.updateIntervalId = setInterval(() => {
-
-			const {
-				city
-			} = this.props;
-
-			this.props.loadWeatherInfo(city);
-
-		}, UPDATE_INTERVAL);
+		this.loadWeatherInfo();
+		this.updateIntervalId = setInterval(this.loadWeatherInfo, UPDATE_INTERVAL);
 	}
 
 	componentWillUnmount() {
@@ -100,5 +93,14 @@ export class WatherContainer extends Component<IProps> {
 
 	private onCityChange({ currentTarget: { value } }: ChangeEvent<HTMLSelectElement>) {
 		this.props.loadWeatherInfo(value);
+	}
+
+	private loadWeatherInfo() {
+
+		const {
+			city
+		} = this.props;
+
+		this.props.loadWeatherInfo(city);
 	}
 }

@@ -5,10 +5,13 @@ import {
 import {
 	Provider
 } from '@flexis/redux';
+import registerServiceWorker from './serviceWorker?tsw';
 import App from './App';
 import createStore from './store';
 
 async function main() {
+
+	registerServiceWorker({ scope: '/' });
 
 	const root = document.querySelector('#view');
 	const store = createStore();
