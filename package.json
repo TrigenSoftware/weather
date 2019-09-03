@@ -34,7 +34,7 @@
     "@loadable/component": "^5.10.2",
     "@stylable/runtime": "^1.0.3",
     "@types/loadable__component": "^5.10.0",
-    "@types/prop-types": "^15.7.1",
+    "@types/prop-types": "^15.7.2",
     "@types/qs": "^6.5.3",
     "@types/react": "^16.9.2",
     "@types/react-router-dom": "^4.3.5",
