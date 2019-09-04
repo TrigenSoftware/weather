@@ -20,7 +20,12 @@ declare module '*?tsw' {
     };
 }
 
+interface IPrecacheEntry {
+	url: string;
+	revision?: string;
+}
+
 // tslint:disable-next-line
 interface ServiceWorkerGlobalScope {
-	__precacheManifest: (Record<string, string> | string)[];
+	__precacheManifest: IPrecacheEntry[];
 }

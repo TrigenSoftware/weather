@@ -1,23 +1,32 @@
 import {
-	precacheAndRoute
+	precacheAndRoute,
+	getCacheKeyForURL
 } from 'workbox-precaching';
 import {
+	registerNavigationRoute,
 	registerRoute
 } from 'workbox-routing';
 import {
-	NetworkFirst
+	NetworkFirst,
+	StaleWhileRevalidate
 } from 'workbox-strategies';
-import {
-	RoutesList
-} from './routes';
 
 declare var self: ServiceWorkerGlobalScope;
 
-self.__precacheManifest.push(
-	...RoutesList
+precacheAndRoute(
+	self.__precacheManifest.filter(
+		({ url }) => !/\/favicons\/.*\.png$/.test(url)
+	)
 );
 
-precacheAndRoute(self.__precacheManifest);
+registerNavigationRoute(
+	getCacheKeyForURL('/index.html')
+);
+
+registerRoute(
+	/\/favicons\//,
+	new StaleWhileRevalidate()
+);
 
 registerRoute(
 	/^https:\/\/api\.openweathermap\.org/,
