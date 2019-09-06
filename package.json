@@ -20,6 +20,7 @@
     "lint": "trigen-scripts lint",
     "jest": "trigen-scripts jest",
     "test": "SEED=584 npm run build:storybook && trigen-scripts test",
+    "artifacts": "trigen-scripts artifacts test/__image_snapshots__/__diff_output__",
     "build:favicons": "trigen-scripts build:favicons --androidBackground white -m src/manifest.json",
     "build:docs": "trigen-scripts build:docs",
     "start:storybook": "trigen-scripts start:storybook -c .storybook",
@@ -41,7 +42,7 @@
     "@types/react-router-dom": "^4.3.5",
     "axios": "^0.19.0",
     "core-js": "3",
-    "date-fns": "^2.0.1",
+    "date-fns": "^2.1.0",
     "date-fns-timezone": "^0.1.4",
     "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.6.0",
@@ -52,9 +53,9 @@
     "redux": "^4.0.4"
   },
   "devDependencies": {
-    "@trigen/scripts": "^2.7.0",
-    "@trigen/scripts-plugin-eslint": "^2.7.0",
-    "@trigen/scripts-preset-react-app": "^3.0.1",
+    "@trigen/scripts": "^3.1.0",
+    "@trigen/scripts-plugin-eslint": "^3.1.0",
+    "@trigen/scripts-preset-react-app": "^3.1.0",
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "moxios": "^0.4.0"
