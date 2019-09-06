@@ -6,7 +6,7 @@ initStoryshots({
 	getMatchOptions(info) {
 
 		const options = getMatchOptions(info);
-		const failureThreshold = 0.1;
+		const failureThreshold = 0.05;
 
 		return {
 			failureThresholdType: 'percent',
