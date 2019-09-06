@@ -2135,7 +2135,7 @@
     telejson "^2.2.1"
     util-deprecate "^1.0.2"
 
-"@stylable/core@^2.1.4":
+"@stylable/core@^2.1.1", "@stylable/core@^2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@stylable/core/-/core-2.1.4.tgz#6ed2ef40ec61765ba56ef9592d1c398862380dca"
   integrity sha512-hfeAIyqx55w8mJr8FWHRnihKx/hb9Qw1R2I7V7ecu7vgR549Nt/bEEByOKgMAZCMT52niglNokBq+BLgbA3AMg==
@@ -2174,13 +2174,12 @@
     find-config "^1.0.0"
     murmurhash "^0.0.2"
 
-"@stylable/optimizer@^2.1.6":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@stylable/optimizer/-/optimizer-2.1.6.tgz#f3be625c93ec80acfbab345a4c746fba750d4d3f"
-  integrity sha512-DXcK8RPRSFiYXUg+HY9r0UlaafbR9P+4JPVhVLpIa0OEdJOUejrTwS+TJTTvyMSm6scxyjJmYyvc771gCIvw7w==
+"@stylable/optimizer@2.1.1", "@stylable/optimizer@^2.1.6":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@stylable/optimizer/-/optimizer-2.1.1.tgz#87eb212f56e72450e1a0108b8c0bb047263c3433"
+  integrity sha512-r2hp734sQlD3lqV1Txh50JZedu41HLu/wlev4Awo0CxZt0JQ0QwQCceDZpl1w7avOd8wiUBTiVlbg5bVqoOlmQ==
   dependencies:
-    "@stylable/core" "^2.1.4"
-    csso "^3.5.1"
+    "@stylable/core" "^2.1.1"
     postcss "^7.0.17"
 
 "@stylable/runtime@^2.1.3":
@@ -2584,12 +2583,7 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
-"@types/prop-types@*", "@types/prop-types@^15.5.6", "@types/prop-types@^15.7.1", "@types/prop-types@^15.7.2":
-  version "15.7.2"
-  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.2.tgz#0e58ae66773d7fd7c372a493aff740878ec9ceaa"
-  integrity sha512-f8JzJNWVhKtc9dg/dyDNfliTKNOJSLa7Oht/ElZdF/UbMUmAH3rLmAk3ODNjw0mZajDEgatA03tRjB4+Dp/tzA==
-
-"@types/prop-types@^15.7.2":
+"@types/prop-types@*", "@types/prop-types@^15.5.6", "@types/prop-types@^15.7.2":
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.2.tgz#0e58ae66773d7fd7c372a493aff740878ec9ceaa"
   integrity sha512-f8JzJNWVhKtc9dg/dyDNfliTKNOJSLa7Oht/ElZdF/UbMUmAH3rLmAk3ODNjw0mZajDEgatA03tRjB4+Dp/tzA==

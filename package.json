@@ -58,5 +58,8 @@
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "moxios": "^0.4.0"
+  },
+  "resolutions": {
+    "@stylable/optimizer": "2.1.1"
   }
 }
