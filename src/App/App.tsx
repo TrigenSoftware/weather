@@ -14,7 +14,6 @@ import '@flexis/ui/reboot.st.css';
 import Weather from '~/containers/Weather/loadable';
 import Todo from '~/containers/Todo/loadable';
 import Navigator from '~/components/Navigator';
-import stylesheet from './App.st.css';
 
 export interface IProps {
 	disableRouter?: boolean;
@@ -25,9 +24,7 @@ export default class App extends Component<IProps> {
 
 	render() {
 		return this.router(
-			<div
-				{...stylesheet('root')}
-			>
+			<>
 				<Navigator>
 					<Link to='/'>
 						Home
@@ -55,7 +52,7 @@ export default class App extends Component<IProps> {
 					exact
 					component={Todo}
 				/>
-			</div>
+			</>
 		);
 	}
 

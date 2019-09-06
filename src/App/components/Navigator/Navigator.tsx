@@ -2,26 +2,34 @@ import React, {
 	Children,
 	Component
 } from 'react';
-import stylesheet from './Navigator.st.css';
+import {
+	style,
+	classes
+} from './Navigator.st.css';
 
-export default class Navigator extends Component {
+export interface IProps {
+	className?: string;
+}
+
+export default class Navigator extends Component<IProps> {
 
 	render() {
 
 		const {
+			className,
 			children
 		} = this.props;
 
 		return (
 			<nav
-				{...stylesheet('root', {}, this.props)}
+				className={style(classes.root, className)}
 			>
 				<ul
-					{...stylesheet('list')}
+					className={classes.list}
 				>
 					{Children.map(children, child => child && (
 						<li
-							{...stylesheet('item')}
+							className={classes.item}
 						>
 							{child}
 						</li>

@@ -11,7 +11,9 @@ import createStore from './store';
 
 async function main() {
 
-	registerServiceWorker({ scope: '/' });
+	if (process.env.NODE_ENV !== 'development') {
+		registerServiceWorker({ scope: '/' });
+	}
 
 	const root = document.querySelector('#view');
 	const store = createStore();
