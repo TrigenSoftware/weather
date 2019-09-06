@@ -11,6 +11,7 @@ import {
 	Link
 } from 'react-router-dom';
 import '@flexis/ui/reboot.st.css';
+import './App.st.css';
 import Weather from '~/containers/Weather/loadable';
 import Todo from '~/containers/Todo/loadable';
 import Navigator from '~/components/Navigator';
