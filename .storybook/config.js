@@ -6,6 +6,7 @@ import '@flexis/ui/reboot.st.css';
 
 if (process.env.SEED) {
 	faker.seed(parseInt(process.env.SEED));
+	document.body.style.fontFamily = 'Arial';
 }
 
 const stories = require.context(
