@@ -1,0 +1,13 @@
+/* stylelint-disable no-descending-specificity */
+:vars {
+	colorBackground: #efefef;
+}
+
+:global(button) {
+	border: 1px solid silver;
+	background-color: value(colorBackground);
+}
+
+:global(input) {
+	border: 1px solid silver;
+}
