@@ -19,7 +19,7 @@
     "lint:scripts": "trigen-scripts lint:scripts",
     "lint": "trigen-scripts lint",
     "jest": "trigen-scripts jest",
-    "test": "trigen-scripts test",
+    "test": "npm run build:storybook && trigen-scripts test",
     "build:favicons": "trigen-scripts build:favicons --androidBackground white -m src/manifest.json",
     "build:docs": "trigen-scripts build:docs",
     "start:storybook": "trigen-scripts start:storybook -c .storybook",

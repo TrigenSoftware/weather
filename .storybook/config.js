@@ -1,16 +1,12 @@
-import React from 'react';
 import {
 	configure
 } from '@trigen/scripts-preset-react-app/storybook/config';
-import {
-	addDecorator
-} from '@storybook/react';
 import '@flexis/ui/reboot.st.css';
 
-addDecorator(story => (
-	<div>
-		{story()}
-	</div>
-));
+const stories = require.context(
+	process.env.PROJECT_SRC,
+	true,
+	/\.stories\.tsx$/
+);
 
-configure(module);
+configure(module, stories);
