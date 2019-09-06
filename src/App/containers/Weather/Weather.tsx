@@ -8,7 +8,9 @@ import {
 import CITIES from '~/store/cities';
 import Weather from '~/components/Weather';
 import WeatherList from '~/components/WeatherList';
-import stylesheet from './Weather.st.css';
+import {
+	classes
+} from './Weather.st.css';
 
 export interface IProps extends IWeatherStateProps {
 	loadWeatherInfo(city: string);
@@ -41,15 +43,15 @@ export class WatherContainer extends Component<IProps> {
 
 		return (
 			<main
-				{...stylesheet('root')}
+				className={classes.root}
 			>
 				{this.citySelect()}
 				<Weather
-					{...stylesheet('mainWeather')}
+					className={classes.mainWeather}
 					{...currentWeather.toJS()}
 				/>
 				<WeatherList
-					{...stylesheet('mainList')}
+					className={classes.mainList}
 				>
 					{weatherForecast.map((weatherInfo, i) => (
 						<Weather
@@ -65,10 +67,10 @@ export class WatherContainer extends Component<IProps> {
 	private citySelect() {
 		return (
 			<div
-				{...stylesheet('citySelectContainer')}
+				className={classes.citySelectContainer}
 			>
 				<select
-					{...stylesheet('citySelect')}
+					className={classes.citySelect}
 					defaultValue={CITIES[0]}
 					onChange={this.onCityChange}
 				>
