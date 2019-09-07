@@ -4,4 +4,6 @@ node_js:
 cache:
   directories:
     - node_modules
-after_script: npm run artifacts
+after_script:
+  - yarn jest -u
+  - npm run artifacts
