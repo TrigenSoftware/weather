@@ -1,3 +1,7 @@
 import initStoryshots from '@trigen/scripts-plugin-storybook/jest/storyshots';
 
-initStoryshots();
+if (process.platform === 'linux') {
+	initStoryshots();
+} else {
+	it('skip storyshots', () => {});
+}
