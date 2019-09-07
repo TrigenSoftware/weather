@@ -20,7 +20,7 @@
     "lint": "trigen-scripts lint",
     "jest": "trigen-scripts jest",
     "test": "SEED=584 npm run build:storybook && trigen-scripts test",
-    "artifacts": "trigen-scripts artifacts test/__image_snapshots__/__diff_output__",
+    "artifacts": "trigen-scripts artifacts test/__image_snapshots__",
     "build:favicons": "trigen-scripts build:favicons --androidBackground white -m src/manifest.json",
     "build:docs": "trigen-scripts build:docs",
     "start:storybook": "trigen-scripts start:storybook -c .storybook",
