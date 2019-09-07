@@ -18,7 +18,7 @@
     "lint:styles": "trigen-scripts lint:styles",
     "lint:scripts": "trigen-scripts lint:scripts",
     "lint": "trigen-scripts lint",
-    "jest": "trigen-scripts jest",
+    "jest": "trigen-scripts jest -u",
     "test": "SEED=584 npm run build:storybook && trigen-scripts test",
     "artifacts": "trigen-scripts artifacts test/__image_snapshots__",
     "build:favicons": "trigen-scripts build:favicons --androidBackground white -m src/manifest.json",
