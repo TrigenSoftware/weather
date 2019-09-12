@@ -4,7 +4,7 @@ if (process.platform === 'linux') {
 
 	process.env.SEED = JSON.stringify(584);
 	process.env.DISABLE_BROWSER_SYNC = JSON.stringify(true);
-	jest.setTimeout(30000);
+	jest.setTimeout(60000);
 
 	initStoryshots();
 
