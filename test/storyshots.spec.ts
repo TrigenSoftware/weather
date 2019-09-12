@@ -7,6 +7,7 @@ if (process.platform === 'linux') {
 	jest.setTimeout(30000);
 
 	initStoryshots();
+
 } else {
 	it('should skip storyshots', () => {});
 }
