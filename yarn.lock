@@ -1549,12 +1549,12 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@loadable/component@^5.10.2":
-  version "5.10.2"
-  resolved "https://registry.yarnpkg.com/@loadable/component/-/component-5.10.2.tgz#1f51e7a0064cc0f59604b1933bbc7a1bbfd84d18"
-  integrity sha512-pUzGRc/mhGzZ0+xJPQErnS68BQEApFYGwn10iSDqBHdDhOruCASTer1J+rYI4jaJJcegJwnuzh7j/SqMoiCyAQ==
+"@loadable/component@^5.10.3":
+  version "5.10.3"
+  resolved "https://registry.yarnpkg.com/@loadable/component/-/component-5.10.3.tgz#e1ad811ac4834a6ed187605d8464351d0c52896f"
+  integrity sha512-/aSO+tXw4vFMwZ6fgLaNQgLuEa7bgTpoBE4PxNzf08/ewAjymrCS3J7v3SbGE7IjGmmKL6vVwkpb7S3cYrk+ag==
   dependencies:
-    "@babel/runtime" "^7.4.4"
+    "@babel/runtime" "^7.6.0"
     hoist-non-react-statics "^3.3.0"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
