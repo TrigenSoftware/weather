@@ -1,3 +1,4 @@
+// tslint:disable space-in-parens
 import Store from '@flexis/redux';
 import {
 	IActions
@@ -11,7 +12,7 @@ async function loadWeatherSegmentConfig() {
 	const {
 		WeatherReducer,
 		WeatherActions
-	} = await import('./');
+	} = await import(/* webpackChunkName: 'weather.segment' */ './');
 
 	return {
 		reducer: WeatherReducer,

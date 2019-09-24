@@ -61,6 +61,7 @@ Optional variables:
 ```bash
 PROXY_API_URI='' # valid URI; not set by default
 DISABLE_BROWSER_SYNC=false # boolean; `false` by default
+DISABLE_HISTORY_FALLBACK=false # boolean; `false` by default
 ```
 
 You can create `.env` in project root with this variables.
