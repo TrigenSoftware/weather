@@ -55,7 +55,7 @@
   "devDependencies": {
     "@trigen/scripts": "^4.0.0",
     "@trigen/scripts-plugin-eslint": "^4.0.0",
-    "@trigen/scripts-preset-react-app": "^3.6.0",
+    "@trigen/scripts-preset-react-app": "^4.0.0",
     "@types/faker": "^4.1.9",
     "faker": "^4.1.0",
     "moxios": "^0.4.0"
