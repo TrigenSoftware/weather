@@ -42,7 +42,7 @@
     "@types/react-router-dom": "^5.1.5",
     "axios": "^0.19.2",
     "core-js": "3",
-    "date-fns": "^2.14.0",
+    "date-fns": "^2.22.1",
     "date-fns-timezone": "^0.1.4",
     "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.6.0",
