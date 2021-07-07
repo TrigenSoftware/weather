@@ -38,7 +38,7 @@
     "@types/loadable__component": "^5.10.0",
     "@types/prop-types": "^15.7.3",
     "@types/qs": "^6.9.3",
-    "@types/react": "^16.9.35",
+    "@types/react": "^17.0.14",
     "@types/react-router-dom": "^5.1.5",
     "axios": "^0.19.2",
     "core-js": "3",
